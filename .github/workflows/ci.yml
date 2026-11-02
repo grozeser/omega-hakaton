@@ -1,0 +1,200 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  UV_VERSION: 0.11.32
+  NODE_VERSION: 22.22.0
+  PYTHON_VERSION: '3.12'
+
+jobs:
+  backend:
+    name: Backend — линтер и юнит-тесты
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - run: pip install uv==${{ env.UV_VERSION }}
+      - run: uv sync --frozen
+      - run: uv run ruff check .
+      - run: uv run ruff format --check .
+      - run: uv run pytest tests/unit -q
+      - name: Качество разбора потребности на эталонном наборе
+        run: uv run python -m app.ai_eval
+      - name: Спецификация OpenAPI в docs/api совпадает с кодом
+        run: |
+          uv run python -m app.export_openapi ../docs/api/openapi.json
+          git diff --exit-code -- ../docs/api/openapi.json
+
+  simulator:
+    name: Симулятор — линтер и тесты
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: simulator
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - run: pip install uv==${{ env.UV_VERSION }}
+      - run: uv sync --frozen
+      - run: uv run ruff check .
+      - run: uv run ruff format --check .
+      - run: uv run pytest -q
+
+  frontend:
+    name: Frontend — форматирование, типы, сборка
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci --no-audit --no-fund
+      - run: npm run format:check
+      - run: npm run build
+
+  dependencies:
+    name: Аудит зависимостей — известные уязвимости
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: |
+            frontend/package-lock.json
+            e2e/package-lock.json
+      # Находки не останавливают сборку: новая публикация уязвимости не должна красить CI в день показа.
+      # Шаг помечается предупреждением, подробности — в его выводе.
+      - name: npm audit — зависимости интерфейса, попадающие в сборку
+        working-directory: frontend
+        continue-on-error: true
+        run: npm audit --omit=dev --audit-level=high
+      - name: npm audit — браузерные тесты
+        working-directory: e2e
+        continue-on-error: true
+        run: npm audit --audit-level=high
+      - uses: actions/setup-python@v6
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - run: pip install uv==${{ env.UV_VERSION }}
+      - name: pip-audit — зависимости API, обработчика и симулятора
+        continue-on-error: true
+        run: |
+          uv export --project backend --no-dev --no-hashes --format requirements-txt -o backend-requirements.txt
+          uv export --project simulator --no-dev --no-hashes --format requirements-txt -o simulator-requirements.txt
+          uvx pip-audit -r backend-requirements.txt -r simulator-requirements.txt --progress-spinner off
+
+  e2e-demo:
+    name: Сквозные сценарии на демо-версии без сервера
+    needs: [frontend]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: |
+            frontend/package-lock.json
+            e2e/package-lock.json
+      - run: npm ci --no-audit --no-fund
+        working-directory: frontend
+      - name: Имитация сервера совпадает со снимками настоящего API
+        working-directory: frontend
+        run: npm run demo:check
+      - name: Сценарии в браузере (Playwright) на демо-сборке
+        working-directory: e2e
+        run: |
+          npm ci --no-audit --no-fund
+          npm run typecheck
+          npx playwright install --with-deps chromium
+          npm run test:demo
+      - name: Аудит доступности (axe, WCAG 2.1 AA) на демо-сборке
+        working-directory: e2e
+        run: npm run test:a11y
+      - uses: actions/upload-artifact@v6
+        if: failure()
+        with:
+          name: e2e-demo-report
+          path: |
+            e2e/playwright-report
+            e2e/test-results
+          retention-days: 7
+
+  e2e:
+    name: Сквозные сценарии на docker compose
+    needs: [backend, simulator, frontend]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Сборка и запуск стека
+        run: docker compose up -d --build --wait
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - run: pip install uv==${{ env.UV_VERSION }}
+      - name: Сценарии через API
+        working-directory: backend
+        env:
+          RUN_INTEGRATION: '1'
+          API_URL: http://localhost:8080
+        run: |
+          uv sync --frozen
+          uv run pytest tests/integration -q
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: e2e/package-lock.json
+      - name: Сценарии в браузере (Playwright)
+        working-directory: e2e
+        env:
+          E2E_BASE_URL: http://localhost:8080
+        run: |
+          npm ci --no-audit --no-fund
+          npm run typecheck
+          npx playwright install --with-deps chromium
+          npx playwright test
+
+      - name: Логи сервисов
+        if: failure()
+        run: docker compose logs --no-color --timestamps > compose-logs.txt
+      - uses: actions/upload-artifact@v6
+        if: failure()
+        with:
+          name: e2e-report
+          path: |
+            e2e/playwright-report
+            e2e/test-results
+            compose-logs.txt
+          retention-days: 7

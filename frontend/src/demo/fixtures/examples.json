@@ -1,0 +1,2668 @@
+{
+  "me": {
+    "id": "79892a3f-3f99-417a-9704-9ee4b37acad6",
+    "login": "veter",
+    "full_name": "Ветров Андрей Сергеевич",
+    "position": "Генеральный директор",
+    "role": "CLIENT",
+    "can_sign": true,
+    "company": {
+      "id": "ffe889d3-7d5c-43de-8901-bb737fad3461",
+      "inn": "0010000017",
+      "name": "ООО «Северный ветер»",
+      "legal_form": "OOO",
+      "ogrn": "1007700000010",
+      "registration_date": "2020-08-24",
+      "okved": "46.39",
+      "okved_name": "Торговля оптовая неспециализированная пищевыми продуктами",
+      "address": "г. Москва, Северный проезд, д. 12, офис 4",
+      "status": "ACTIVE",
+      "status_label": "Действующая",
+      "director_name": "Ветров Андрей Сергеевич",
+      "is_bank_client": true,
+      "bank_account_opened_at": "2021-10-24",
+      "business_months": 74,
+      "account_months": 60,
+      "registry_synced_at": "2026-10-24T23:06:55.838637Z"
+    }
+  },
+  "proactive": {
+    "veter": {
+      "offers": [
+        {
+          "product_code": "OVERDRAFT",
+          "product_name": "Овердрафт",
+          "kind": "OVERDRAFT",
+          "purpose": "CASH_GAP",
+          "amount": 4000000,
+          "term_months": 12,
+          "rate_from": 19,
+          "monthly_payment": 63333.33,
+          "payment_label": "Проценты в месяц при полном использовании лимита"
+        },
+        {
+          "product_code": "GROWTH",
+          "product_name": "Кредит на развитие бизнеса",
+          "kind": "LOAN",
+          "purpose": "WORKING_CAPITAL",
+          "amount": 10000000,
+          "term_months": 36,
+          "rate_from": 19,
+          "monthly_payment": 366560.2,
+          "payment_label": "Ежемесячный платёж"
+        }
+      ],
+      "facts": [
+        "Бизнес работает 6 лет 2 мес.",
+        "Выручка по отчётности — 120 000 000 ₽ в год",
+        "Выручка выросла на 14 % за год",
+        "Поступления на счёт — в среднем 10 000 000 ₽ в месяц"
+      ],
+      "note": "Предварительно, без учёта кредитной истории. Точные условия — после проверки по заявке.",
+      "computed_at": "2026-10-24T23:08:00.707571Z"
+    },
+    "smirnova": {
+      "offers": [
+        {
+          "product_code": "OVERDRAFT",
+          "product_name": "Овердрафт",
+          "kind": "OVERDRAFT",
+          "purpose": "CASH_GAP",
+          "amount": 440000,
+          "term_months": 12,
+          "rate_from": 19,
+          "monthly_payment": 6966.67,
+          "payment_label": "Проценты в месяц при полном использовании лимита"
+        },
+        {
+          "product_code": "GROWTH",
+          "product_name": "Кредит на развитие бизнеса",
+          "kind": "LOAN",
+          "purpose": "WORKING_CAPITAL",
+          "amount": 3460000,
+          "term_months": 36,
+          "rate_from": 19,
+          "monthly_payment": 126829.83,
+          "payment_label": "Ежемесячный платёж"
+        }
+      ],
+      "facts": ["Бизнес работает 2 года 2 мес.","Поступления на счёт — в среднем 1 100 000 ₽ в месяц"],
+      "note": "Предварительно, без учёта кредитной истории. Точные условия — после проверки по заявке.",
+      "computed_at": "2026-10-24T23:08:01.636104Z"
+    },
+    "tehnomaster": {
+      "offers": [
+        {
+          "product_code": "GROWTH",
+          "product_name": "Кредит на развитие бизнеса",
+          "kind": "LOAN",
+          "purpose": "WORKING_CAPITAL",
+          "amount": 10000000,
+          "term_months": 36,
+          "rate_from": 19,
+          "monthly_payment": 366560.2,
+          "payment_label": "Ежемесячный платёж"
+        }
+      ],
+      "facts": [
+        "Бизнес работает 4 года 4 мес.",
+        "Выручка по отчётности — 48 000 000 ₽ в год",
+        "Выручка выросла на 7 % за год",
+        "Поступления на счёт — в среднем 2 487 500 ₽ в месяц"
+      ],
+      "note": "Предварительно, без учёта кредитной истории. Точные условия — после проверки по заявке.",
+      "computed_at": "2026-10-24T23:08:02.157819Z"
+    },
+    "orlov": {
+      "offers": [],
+      "facts": ["Бизнес работает 3 года 2 мес."],
+      "note": "Чтобы рассчитать предложение заранее, нужна отчётность или поступления на счёт за три месяца и больше. Подайте заявку — приложите выписку из другого банка, и мы оценим выручку по ней.",
+      "computed_at": "2026-10-24T23:08:02.868670Z"
+    },
+    "vektor": {
+      "offers": [
+        {
+          "product_code": "OVERDRAFT",
+          "product_name": "Овердрафт",
+          "kind": "OVERDRAFT",
+          "purpose": "CASH_GAP",
+          "amount": 1200000,
+          "term_months": 12,
+          "rate_from": 19,
+          "monthly_payment": 19000,
+          "payment_label": "Проценты в месяц при полном использовании лимита"
+        },
+        {
+          "product_code": "GROWTH",
+          "product_name": "Кредит на развитие бизнеса",
+          "kind": "LOAN",
+          "purpose": "WORKING_CAPITAL",
+          "amount": 10000000,
+          "term_months": 36,
+          "rate_from": 19,
+          "monthly_payment": 366560.2,
+          "payment_label": "Ежемесячный платёж"
+        }
+      ],
+      "facts": [
+        "Бизнес работает 3 года 4 мес.",
+        "Выручка по отчётности — 36 000 000 ₽ в год",
+        "Выручка выросла на 16 % за год",
+        "Поступления на счёт — в среднем 3 000 000 ₽ в месяц"
+      ],
+      "note": "Предварительно, без учёта кредитной истории. Точные условия — после проверки по заявке.",
+      "computed_at": "2026-10-24T23:08:03.366552Z"
+    },
+    "grand": {
+      "offers": [
+        {
+          "product_code": "OVERDRAFT",
+          "product_name": "Овердрафт",
+          "kind": "OVERDRAFT",
+          "purpose": "CASH_GAP",
+          "amount": 5000000,
+          "term_months": 12,
+          "rate_from": 19,
+          "monthly_payment": 79166.67,
+          "payment_label": "Проценты в месяц при полном использовании лимита"
+        },
+        {
+          "product_code": "GROWTH",
+          "product_name": "Кредит на развитие бизнеса",
+          "kind": "LOAN",
+          "purpose": "WORKING_CAPITAL",
+          "amount": 10000000,
+          "term_months": 36,
+          "rate_from": 19,
+          "monthly_payment": 366560.2,
+          "payment_label": "Ежемесячный платёж"
+        }
+      ],
+      "facts": [
+        "Бизнес работает 8 лет 4 мес.",
+        "Выручка по отчётности — 420 000 000 ₽ в год",
+        "Выручка выросла на 17 % за год",
+        "Поступления на счёт — в среднем 35 000 000 ₽ в месяц"
+      ],
+      "note": "Предварительно, без учёта кредитной истории. Точные условия — после проверки по заявке.",
+      "computed_at": "2026-10-24T23:08:04.293336Z"
+    },
+    "start": {
+      "offers": [],
+      "facts": ["Бизнес работает 5 мес.","Поступления на счёт — в среднем 504 000 ₽ в месяц"],
+      "note": null,
+      "computed_at": "2026-10-24T23:08:05.017485Z"
+    },
+    "altair": {
+      "offers": [
+        {
+          "product_code": "OVERDRAFT",
+          "product_name": "Овердрафт",
+          "kind": "OVERDRAFT",
+          "purpose": "CASH_GAP",
+          "amount": 2120000,
+          "term_months": 12,
+          "rate_from": 19,
+          "monthly_payment": 33566.67,
+          "payment_label": "Проценты в месяц при полном использовании лимита"
+        },
+        {
+          "product_code": "GROWTH",
+          "product_name": "Кредит на развитие бизнеса",
+          "kind": "LOAN",
+          "purpose": "WORKING_CAPITAL",
+          "amount": 10000000,
+          "term_months": 36,
+          "rate_from": 19,
+          "monthly_payment": 366560.2,
+          "payment_label": "Ежемесячный платёж"
+        }
+      ],
+      "facts": [
+        "Бизнес работает 8 лет 2 мес.",
+        "Выручка по отчётности — 64 000 000 ₽ в год",
+        "Выручка выросла на 14 % за год",
+        "Поступления на счёт — в среднем 5 300 000 ₽ в месяц"
+      ],
+      "note": "Предварительно, без учёта кредитной истории. Точные условия — после проверки по заявке.",
+      "computed_at": "2026-10-24T23:08:05.849332Z"
+    },
+    "romashka": {
+      "offers": [],
+      "facts": [
+        "Бизнес работает 5 лет 10 мес.",
+        "Выручка по отчётности — 9 000 000 ₽ в год",
+        "Выручка снизилась на 57 % за год",
+        "Поступления на счёт — в среднем 408 333 ₽ в месяц"
+      ],
+      "note": null,
+      "computed_at": "2026-10-24T23:08:06.658690Z"
+    },
+    "meridian": {
+      "offers": [
+        {
+          "product_code": "GROWTH",
+          "product_name": "Кредит на развитие бизнеса",
+          "kind": "LOAN",
+          "purpose": "WORKING_CAPITAL",
+          "amount": 3320000,
+          "term_months": 36,
+          "rate_from": 19,
+          "monthly_payment": 121697.99,
+          "payment_label": "Ежемесячный платёж"
+        }
+      ],
+      "facts": [
+        "Бизнес работает 3 года 8 мес.",
+        "Выручка по отчётности — 26 000 000 ₽ в год",
+        "Выручка снизилась на 10 % за год",
+        "Поступления на счёт — в среднем 1 264 000 ₽ в месяц"
+      ],
+      "note": "Предварительно, без учёта кредитной истории. Точные условия — после проверки по заявке.",
+      "computed_at": "2026-10-24T23:08:07.437197Z"
+    }
+  },
+  "preliminary": {
+    "offers": [
+      {
+        "product_code": "OVERDRAFT",
+        "product_name": "Овердрафт",
+        "kind": "OVERDRAFT",
+        "purpose": "CASH_GAP",
+        "amount": 300000,
+        "term_months": 12,
+        "rate_from": 19,
+        "monthly_payment": 4750,
+        "payment_label": "Проценты в месяц при полном использовании лимита"
+      },
+      {
+        "product_code": "GROWTH",
+        "product_name": "Кредит на развитие бизнеса",
+        "kind": "LOAN",
+        "purpose": "WORKING_CAPITAL",
+        "amount": 2360000,
+        "term_months": 36,
+        "rate_from": 19,
+        "monthly_payment": 86508.21,
+        "payment_label": "Ежемесячный платёж"
+      }
+    ],
+    "facts": [
+      "По выписке: 12 мес., в среднем 752 500 ₽ поступлений в месяц",
+      "Бизнес работает 2 года 2 мес.",
+      "Счёт в банке: 2 года 1 мес."
+    ],
+    "note": "Предварительно, по выписке и данным ЕГРЮЛ/ЕГРИП, без кредитной истории. Точные условия — после проверки по заявке; эту выписку можно приложить к ней.",
+    "computed_at": "2026-10-24T23:08:08.245151Z",
+    "statement": {
+      "source": "CSV",
+      "account": null,
+      "period_from": "2025-10-04",
+      "period_to": "2026-09-25",
+      "operations": 88,
+      "months": [
+        {"month":"2025-10","inflow":820000,"outflow":728000},
+        {"month":"2025-11","inflow":760000,"outflow":670000},
+        {"month":"2025-12","inflow":980000,"outflow":740000},
+        {"month":"2026-01","inflow":540000,"outflow":668000},
+        {"month":"2026-02","inflow":600000,"outflow":630000},
+        {"month":"2026-03","inflow":720000,"outflow":660000},
+        {"month":"2026-04","inflow":800000,"outflow":728000},
+        {"month":"2026-05","inflow":900000,"outflow":710000},
+        {"month":"2026-06","inflow":960000,"outflow":730000},
+        {"month":"2026-07","inflow":780000,"outflow":748000},
+        {"month":"2026-08","inflow":650000,"outflow":680000},
+        {"month":"2026-09","inflow":520000,"outflow":670000}
+      ],
+      "total_inflow": 9030000,
+      "avg_monthly_inflow": 752500,
+      "closing_balance": null,
+      "forecast": {
+        "horizon_months": 3,
+        "balance_known": false,
+        "deficit_months": ["2026-01","2026-02","2026-08","2026-09"],
+        "trend_inflow": -9126,
+        "trend_outflow": 441,
+        "months": [
+          {"month":"2026-10","inflow":640874,"outflow":699774,"balance":-58900},
+          {"month":"2026-11","inflow":631748,"outflow":700214,"balance":-127366},
+          {"month":"2026-12","inflow":622622,"outflow":700655,"balance":-205399}
+        ],
+        "min_balance": -205399,
+        "min_balance_month": "2026-12",
+        "gap": 205399,
+        "overdraft_cap": 300000,
+        "recommendation": {"product":"OVERDRAFT","amount":250000,"reason":"GAP_COVERED_BY_OVERDRAFT"}
+      }
+    }
+  },
+  "quote": [
+    {
+      "product": {
+        "code": "CREDIT_LINE",
+        "name": "Возобновляемая кредитная линия",
+        "kind": "CREDIT_LINE",
+        "description": "Оформите один раз и берите деньги частями в пределах лимита. Проценты — только на использованную часть.",
+        "min_amount": "1000000.00",
+        "max_amount": "50000000.00",
+        "min_term": 12,
+        "max_term": 24,
+        "base_rate": "18.00",
+        "collateral_required": false,
+        "min_business_months": 12,
+        "max_business_months": null,
+        "requires_bank_account_months": null,
+        "auto_limit": "10000000.00"
+      },
+      "eligible": true,
+      "issues": [],
+      "rate_from": "18.00",
+      "monthly_payment": "45000.00",
+      "overpayment": "1080000.00",
+      "payment_label": "Проценты в месяц при полном использовании лимита"
+    },
+    {
+      "product": {
+        "code": "GROWTH",
+        "name": "Кредит на развитие бизнеса",
+        "kind": "LOAN",
+        "description": "Деньги на развитие без залога: закупки, новые точки, оборудование.",
+        "min_amount": "1000000.00",
+        "max_amount": "30000000.00",
+        "min_term": 12,
+        "max_term": 60,
+        "base_rate": "19.00",
+        "collateral_required": false,
+        "min_business_months": 12,
+        "max_business_months": null,
+        "requires_bank_account_months": null,
+        "auto_limit": "10000000.00"
+      },
+      "eligible": true,
+      "issues": [],
+      "rate_from": "19.00",
+      "monthly_payment": "151225.85",
+      "overpayment": "629420.40",
+      "payment_label": "Ежемесячный платёж"
+    },
+    {
+      "product": {
+        "code": "EXPRESS",
+        "name": "Экспресс-кредит без залога",
+        "kind": "LOAN",
+        "description": "Быстрое решение без залога и лишних документов — на текущие нужды бизнеса.",
+        "min_amount": "300000.00",
+        "max_amount": "5000000.00",
+        "min_term": 6,
+        "max_term": 36,
+        "base_rate": "21.00",
+        "collateral_required": false,
+        "min_business_months": 9,
+        "max_business_months": null,
+        "requires_bank_account_months": null,
+        "auto_limit": "5000000.00"
+      },
+      "eligible": true,
+      "issues": [],
+      "rate_from": "21.00",
+      "monthly_payment": "154156.95",
+      "overpayment": "699766.80",
+      "payment_label": "Ежемесячный платёж"
+    }
+  ],
+  "queue": [
+    {
+      "id": "c3323a14-655f-49a2-a5cd-413c4f108dcc",
+      "number": "2026-00002",
+      "company_name": "ООО «Гранд Девелопмент»",
+      "inn": "0010000063",
+      "legal_form": "OOO",
+      "product_code": "SECURED",
+      "product_name": "Кредит под залог",
+      "amount": "60000000.00",
+      "term_months": 84,
+      "status": "MANUAL_REVIEW",
+      "status_label": "Ручное рассмотрение",
+      "risk_class": "A",
+      "score": 830,
+      "flags": [],
+      "assignee_name": "Ковалёв Павел Игоревич",
+      "assignee_is_me": false,
+      "sla_due_at": "2026-10-25T23:08:01.443069Z",
+      "overdue": false,
+      "priority": "MEDIUM",
+      "priority_reasons": ["Сумма от 10 млн ₽"],
+      "submitted_at": "2026-10-24T23:07:59.258197Z",
+      "status_changed_at": "2026-10-24T23:08:01.443069Z",
+      "waiting_source": null
+    },
+    {
+      "id": "b53a0f1f-c7e4-42b3-a325-fe385604f434",
+      "number": "2026-00001",
+      "company_name": "ООО «Вектор Логистик»",
+      "inn": "0010000031",
+      "legal_form": "OOO",
+      "product_code": "GROWTH",
+      "product_name": "Кредит на развитие бизнеса",
+      "amount": "12000000.00",
+      "term_months": 36,
+      "status": "MANUAL_REVIEW",
+      "status_label": "Ручное рассмотрение",
+      "risk_class": "B",
+      "score": 720,
+      "flags": ["F01","F02"],
+      "assignee_name": "Иванова Ольга Дмитриевна",
+      "assignee_is_me": true,
+      "sla_due_at": "2026-10-25T23:08:01.452975Z",
+      "overdue": false,
+      "priority": "MEDIUM",
+      "priority_reasons": ["Сумма от 10 млн ₽","Флаги F01, F02 требуют проверки"],
+      "submitted_at": "2026-10-24T23:07:59.240354Z",
+      "status_changed_at": "2026-10-24T23:08:01.452975Z",
+      "waiting_source": null
+    }
+  ],
+  "summary": {
+    "manual_review": 2,
+    "mine": 1,
+    "overdue": 0,
+    "need_info": 0,
+    "in_processing": 0,
+    "waiting_sources": 0,
+    "offers": 0,
+    "issued_today": 0
+  },
+  "metrics": {
+    "period_days": 30,
+    "since": "2026-09-24T23:08:09.396293Z",
+    "until": "2026-10-24T23:08:09.396293Z",
+    "submitted": 2,
+    "in_progress": 2,
+    "decided": 0,
+    "auto_decided": 0,
+    "manual_decided": 0,
+    "automation_share": null,
+    "manual_review": 2,
+    "need_info": 0,
+    "issued": 0,
+    "issued_amount": "0",
+    "outcomes": [],
+    "to_decision_median_seconds": null,
+    "to_decision_p95_seconds": null,
+    "to_issue_median_hours": null,
+    "info_response_median_hours": null,
+    "review_median_hours": null,
+    "offered": 0,
+    "accepted": 0,
+    "offer_conversion": null,
+    "counter_offered": 0,
+    "counter_accepted": 0,
+    "counter_conversion": null,
+    "sla_overdue_now": 0,
+    "sla_breached": 0,
+    "rejection_reasons": [],
+    "products": [
+      {
+        "code": "GROWTH",
+        "name": "Кредит на развитие бизнеса",
+        "applications": 1,
+        "approved": 0,
+        "issued": 0,
+        "issued_amount": "0"
+      },
+      {
+        "code": "SECURED",
+        "name": "Кредит под залог",
+        "applications": 1,
+        "approved": 0,
+        "issued": 0,
+        "issued_amount": "0"
+      }
+    ],
+    "analysts": [
+      {"name":"Иванова Ольга Дмитриевна","decided":0,"in_work":1,"overdue":0,"median_review_hours":null},
+      {"name":"Ковалёв Павел Игоревич","decided":0,"in_work":1,"overdue":0,"median_review_hours":null}
+    ],
+    "daily": [
+      {"date":"2026-09-26","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-09-27","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-09-28","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-09-29","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-09-30","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-01","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-02","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-03","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-04","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-05","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-06","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-07","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-08","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-09","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-10","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-11","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-12","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-13","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-14","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-15","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-16","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-17","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-18","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-19","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-20","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-21","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-22","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-23","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-24","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-25","submitted":2,"decided":0,"issued":0}
+    ]
+  },
+  "dossier": {
+    "application": {
+      "id": "b53a0f1f-c7e4-42b3-a325-fe385604f434",
+      "number": "2026-00001",
+      "status": "MANUAL_REVIEW",
+      "status_label": "Ручное рассмотрение",
+      "next_step": "Специалист изучает заявку",
+      "needs_action": false,
+      "can_cancel": true,
+      "product": {
+        "code": "GROWTH",
+        "name": "Кредит на развитие бизнеса",
+        "kind": "LOAN",
+        "description": "Деньги на развитие без залога: закупки, новые точки, оборудование.",
+        "min_amount": "1000000.00",
+        "max_amount": "30000000.00",
+        "min_term": 12,
+        "max_term": 60,
+        "base_rate": "19.00",
+        "collateral_required": false,
+        "min_business_months": 12,
+        "max_business_months": null,
+        "requires_bank_account_months": null,
+        "auto_limit": "10000000.00"
+      },
+      "purpose": "EXPANSION",
+      "purpose_label": "Расширить бизнес, открыть новую точку",
+      "purpose_text": "Покупка двух грузовых автомобилей и расширение автопарка",
+      "amount": "12000000.00",
+      "term_months": 36,
+      "declared_revenue": "36000000.00",
+      "collateral_type": null,
+      "collateral_value": null,
+      "created_at": "2026-10-24T23:07:59.032505Z",
+      "submitted_at": "2026-10-24T23:07:59.240354Z",
+      "status_changed_at": "2026-10-24T23:08:01.452975Z",
+      "closed_at": null,
+      "sla_due_at": "2026-10-25T23:08:01.452975Z",
+      "run_no": 1,
+      "company": {
+        "id": "11a8ca47-de2b-47eb-9b49-807cddd3e17d",
+        "inn": "0010000031",
+        "name": "ООО «Вектор Логистик»",
+        "legal_form": "OOO",
+        "ogrn": "1007700000032",
+        "registration_date": "2023-06-24",
+        "okved": "49.41",
+        "okved_name": "Деятельность автомобильного грузового транспорта",
+        "address": "г. Москва, Деловой бульвар, д. 1, офис 315",
+        "status": "ACTIVE",
+        "status_label": "Действующая",
+        "director_name": "Громов Артём Валерьевич",
+        "is_bank_client": true,
+        "bank_account_opened_at": "2025-04-24",
+        "business_months": 40,
+        "account_months": 18,
+        "registry_synced_at": "2026-10-24T23:07:59.821924Z"
+      },
+      "steps": [
+        {
+          "step": "DATA_CHECK",
+          "title": "Проверка данных заявки",
+          "status": "DONE",
+          "attempts": 1,
+          "started_at": "2026-10-24T23:07:59.427324Z",
+          "finished_at": "2026-10-24T23:07:59.431932Z",
+          "next_retry_at": null,
+          "waiting_text": null,
+          "error": null
+        },
+        {
+          "step": "EGRUL",
+          "title": "Сведения из ЕГРЮЛ / ЕГРИП",
+          "status": "DONE",
+          "attempts": 1,
+          "started_at": "2026-10-24T23:07:59.446338Z",
+          "finished_at": "2026-10-24T23:07:59.821978Z",
+          "next_retry_at": null,
+          "waiting_text": null,
+          "error": null
+        },
+        {
+          "step": "FNS",
+          "title": "Проверка в ФНС",
+          "status": "DONE",
+          "attempts": 1,
+          "started_at": "2026-10-24T23:07:59.840469Z",
+          "finished_at": "2026-10-24T23:08:00.051253Z",
+          "next_retry_at": null,
+          "waiting_text": null,
+          "error": null
+        },
+        {
+          "step": "GIRBO",
+          "title": "Бухгалтерская отчётность",
+          "status": "DONE",
+          "attempts": 1,
+          "started_at": "2026-10-24T23:08:00.067509Z",
+          "finished_at": "2026-10-24T23:08:00.425781Z",
+          "next_retry_at": null,
+          "waiting_text": null,
+          "error": null
+        },
+        {
+          "step": "BKI",
+          "title": "Кредитная история",
+          "status": "DONE",
+          "attempts": 1,
+          "started_at": "2026-10-24T23:08:00.488970Z",
+          "finished_at": "2026-10-24T23:08:01.203732Z",
+          "next_retry_at": null,
+          "waiting_text": null,
+          "error": null
+        },
+        {
+          "step": "BANK",
+          "title": "Обороты по счёту в банке",
+          "status": "DONE",
+          "attempts": 1,
+          "started_at": "2026-10-24T23:08:01.221846Z",
+          "finished_at": "2026-10-24T23:08:01.387841Z",
+          "next_retry_at": null,
+          "waiting_text": null,
+          "error": null
+        },
+        {
+          "step": "SCORING",
+          "title": "Оценка риска",
+          "status": "DONE",
+          "attempts": 1,
+          "started_at": "2026-10-24T23:08:01.408066Z",
+          "finished_at": "2026-10-24T23:08:01.416625Z",
+          "next_retry_at": null,
+          "waiting_text": null,
+          "error": null
+        },
+        {
+          "step": "POLICY",
+          "title": "Кредитное решение",
+          "status": "DONE",
+          "attempts": 1,
+          "started_at": "2026-10-24T23:08:01.441723Z",
+          "finished_at": "2026-10-24T23:08:01.453339Z",
+          "next_retry_at": null,
+          "waiting_text": null,
+          "error": null
+        }
+      ],
+      "offers": [],
+      "info_requests": [],
+      "documents": [],
+      "history": [
+        {
+          "from_status": "DRAFT",
+          "to_status": "SUBMITTED",
+          "to_label": "Новая",
+          "actor": "CLIENT",
+          "actor_name": "Лебедева Марина Олеговна",
+          "reason": null,
+          "created_at": "2026-10-24T23:07:59.032505Z"
+        },
+        {
+          "from_status": "SUBMITTED",
+          "to_status": "IN_PROCESSING",
+          "to_label": "Автоматическая обработка",
+          "actor": "SYSTEM",
+          "actor_name": null,
+          "reason": null,
+          "created_at": "2026-10-24T23:07:59.416621Z"
+        },
+        {
+          "from_status": "IN_PROCESSING",
+          "to_status": "MANUAL_REVIEW",
+          "to_label": "Ручное рассмотрение",
+          "actor": "SYSTEM",
+          "actor_name": null,
+          "reason": "F01 Адрес массовой регистрации, F02 Есть налоговая задолженность",
+          "created_at": "2026-10-24T23:08:01.435898Z"
+        }
+      ],
+      "explanation": {
+        "positive": [
+          "Невысокая текущая долговая нагрузка",
+          "Стабильные поступления на счёт в банке",
+          "Бизнес работает больше 3 лет"
+        ],
+        "negative": ["Были небольшие просрочки по кредитам","Есть налоговая задолженность"],
+        "limit_phrase": null,
+        "rejection": [],
+        "advice": [],
+        "next_steps": [],
+        "rate_breakdown": null,
+        "rate_hints": [],
+        "alternatives": []
+      },
+      "loan": null,
+      "ai_parsed": null
+    },
+    "sources": {
+      "DATA_CHECK": {
+        "status": "DONE",
+        "result": {
+          "checks": [
+            {"ok":true,"title":"ИНН корректен"},
+            {"ok":true,"title":"Продукт доступен"},
+            {"ok":true,"title":"Сумма в пределах продукта"},
+            {"ok":true,"title":"Срок в пределах продукта"},
+            {"ok":true,"title":"Согласие на запрос в БКИ"},
+            {"ok":true,"title":"Согласие на обработку персональных данных"}
+          ]
+        },
+        "error": null,
+        "attempts": 1,
+        "finished_at": "2026-10-24T23:07:59.431932Z"
+      },
+      "EGRUL": {
+        "status": "DONE",
+        "result": {
+          "inn": "0010000031",
+          "name": "ООО «Вектор Логистик»",
+          "ogrn": "1007700000032",
+          "found": true,
+          "okved": "49.41",
+          "status": "ACTIVE",
+          "address": "г. Москва, Деловой бульвар, д. 1, офис 315",
+          "director": {"name":"Громов Артём Валерьевич","since":"2023-06-24"},
+          "legal_form": "OOO",
+          "okved_name": "Деятельность автомобильного грузового транспорта",
+          "registration_date": "2023-06-24"
+        },
+        "error": null,
+        "attempts": 1,
+        "finished_at": "2026-10-24T23:07:59.821978Z"
+      },
+      "FNS": {
+        "status": "DONE",
+        "result": {
+          "inn": "0010000031",
+          "tax_debt": 82000,
+          "employees": 15,
+          "tax_regime": "УСН",
+          "mass_address": true,
+          "director_disqualified": false
+        },
+        "error": null,
+        "attempts": 1,
+        "finished_at": "2026-10-24T23:08:00.051253Z"
+      },
+      "GIRBO": {
+        "status": "DONE",
+        "result": {
+          "inn": "0010000031",
+          "years": [
+            {"year":2025,"revenue":36000000,"net_profit":5300000,"sales_profit":7200000},
+            {"year":2024,"revenue":31000000,"net_profit":4300000,"sales_profit":5900000}
+          ],
+          "available": true
+        },
+        "error": null,
+        "attempts": 1,
+        "finished_at": "2026-10-24T23:08:00.425781Z"
+      },
+      "BKI": {
+        "status": "DONE",
+        "result": {
+          "inn": "0010000031",
+          "loans": [
+            {
+              "kind": "Кредит",
+              "amount": 9000000,
+              "lender": "Банк «Восток»",
+              "balance": 5200000,
+              "opened_at": "2024-12-24",
+              "monthly_payment": 250000
+            }
+          ],
+          "has_history": true,
+          "current_overdue_days": 0,
+          "max_overdue_days_24m": 12
+        },
+        "error": null,
+        "attempts": 1,
+        "finished_at": "2026-10-24T23:08:01.203732Z"
+      },
+      "BANK": {
+        "status": "DONE",
+        "result": {
+          "inn": "0010000031",
+          "months": [
+            {"month":"2025-10","inflow":2850000},
+            {"month":"2025-11","inflow":3000000},
+            {"month":"2025-12","inflow":3150000},
+            {"month":"2026-01","inflow":2940000},
+            {"month":"2026-02","inflow":3060000},
+            {"month":"2026-03","inflow":2910000},
+            {"month":"2026-04","inflow":3090000},
+            {"month":"2026-05","inflow":3000000},
+            {"month":"2026-06","inflow":2970000},
+            {"month":"2026-07","inflow":3120000},
+            {"month":"2026-08","inflow":2880000},
+            {"month":"2026-09","inflow":3030000}
+          ],
+          "is_client": true,
+          "account_opened_at": "2025-04-24"
+        },
+        "error": null,
+        "attempts": 1,
+        "finished_at": "2026-10-24T23:08:01.387841Z"
+      },
+      "SCORING": {
+        "status": "DONE",
+        "result": {"score":720,"version":"v1.0","risk_class":"B"},
+        "error": null,
+        "attempts": 1,
+        "finished_at": "2026-10-24T23:08:01.416625Z"
+      },
+      "POLICY": {
+        "status": "DONE",
+        "result": {"flags":["F01","F02"],"limit":5650000,"outcome":"MANUAL_REVIEW","version":"v1.0","stop_factors":[]},
+        "error": null,
+        "attempts": 1,
+        "finished_at": "2026-10-24T23:08:01.453339Z"
+      }
+    },
+    "scoring": {
+      "score": 720,
+      "risk_class": "B",
+      "pd": 3,
+      "version": "v1.0",
+      "factors": [
+        {
+          "code": "BUSINESS_AGE",
+          "title": "Срок ведения бизнеса",
+          "value": "3 года 4 мес.",
+          "phrase": "Бизнес работает больше 3 лет",
+          "points": 30
+        },
+        {
+          "code": "CREDIT_HISTORY",
+          "title": "Кредитная история",
+          "value": "просрочки до 12 дн.",
+          "phrase": "Были небольшие просрочки по кредитам",
+          "points": -40
+        },
+        {
+          "code": "DEBT_LOAD",
+          "title": "Текущая долговая нагрузка (DSCR)",
+          "value": "2,40 (платежи 250 000 ₽ в мес.)",
+          "phrase": "Невысокая текущая долговая нагрузка",
+          "points": 60
+        },
+        {
+          "code": "REVENUE_TREND",
+          "title": "Динамика выручки за год",
+          "value": "+16 %",
+          "phrase": "Выручка растёт",
+          "points": 30
+        },
+        {
+          "code": "MARGIN",
+          "title": "Рентабельность продаж",
+          "value": "20,0 %",
+          "phrase": "Высокая рентабельность бизнеса",
+          "points": 30
+        },
+        {
+          "code": "ACCOUNT",
+          "title": "Поступления на счёт в банке",
+          "value": "12 из 12 мес., в среднем 3 000 000 ₽",
+          "phrase": "Стабильные поступления на счёт в банке",
+          "points": 40
+        },
+        {
+          "code": "TAX_DEBT",
+          "title": "Налоговая задолженность",
+          "value": "82 000 ₽",
+          "phrase": "Есть налоговая задолженность",
+          "points": -30
+        },
+        {"code":"INDUSTRY","title":"Отраслевой риск","value":"средний (ОКВЭД 49.41)","phrase":null,"points":0},
+        {"code":"AMOUNT_SHARE","title":"Доля суммы в годовой выручке","value":"33 %","phrase":null,"points":0}
+      ],
+      "features": {
+        "okved": "49.41",
+        "amount": 12000000,
+        "margin": 0.2,
+        "revenue": 36000000,
+        "tax_debt": 82000,
+        "inflow_cv": 0.030276503540974914,
+        "legal_form": "OOO",
+        "term_months": 36,
+        "amount_share": 0.3333333333333333,
+        "dscr_current": 2.4,
+        "mass_address": true,
+        "revenue_prev": 31000000,
+        "sales_profit": 7200000,
+        "existing_debt": 5200000,
+        "industry_risk": "MEDIUM",
+        "inflow_months": 12,
+        "account_months": 18,
+        "company_status": "ACTIVE",
+        "is_bank_client": true,
+        "revenue_growth": 0.16129032258064516,
+        "revenue_source": "GIRBO",
+        "business_months": 40,
+        "director_months": 40,
+        "industry_margin": 0.12,
+        "declared_revenue": 36000000,
+        "existing_payments": 250000,
+        "avg_monthly_inflow": 3000000,
+        "has_credit_history": true,
+        "revenue_discrepancy": 0,
+        "unavailable_sources": [],
+        "current_overdue_days": 0,
+        "max_overdue_days_24m": 12,
+        "director_disqualified": false,
+        "operating_profit_month": 600000
+      }
+    },
+    "auto_decision": {
+      "id": 487,
+      "kind": "AUTO",
+      "outcome": "MANUAL_REVIEW",
+      "policy_version": "v1.0",
+      "limit": 5650000,
+      "limit_binding": "DSCR",
+      "rate": 20.5,
+      "flags": [
+        {"code":"F01","title":"Адрес массовой регистрации"},
+        {"code":"F02","title":"Есть налоговая задолженность"}
+      ],
+      "stop_factors": [],
+      "reason_codes": [],
+      "trace": [
+        {"rule":"Стоп-факторы","detail":"","result":"нет"},
+        {"rule":"Условия продукта","detail":"","result":"выполнены"},
+        {
+          "rule": "Лимит",
+          "detail": "Текущие платежи по кредитам и прибыль ограничивают сумму",
+          "result": "5 650 000 ₽"
+        },
+        {"rule":"Флаги ручного рассмотрения","detail":"F01, F02","result":"есть"}
+      ],
+      "comment": null,
+      "decided_by": null,
+      "created_at": "2026-10-24T23:08:01.435898Z"
+    },
+    "last_decision": {
+      "id": 487,
+      "kind": "AUTO",
+      "outcome": "MANUAL_REVIEW",
+      "policy_version": "v1.0",
+      "limit": 5650000,
+      "limit_binding": "DSCR",
+      "rate": 20.5,
+      "flags": [
+        {"code":"F01","title":"Адрес массовой регистрации"},
+        {"code":"F02","title":"Есть налоговая задолженность"}
+      ],
+      "stop_factors": [],
+      "reason_codes": [],
+      "trace": [
+        {"rule":"Стоп-факторы","detail":"","result":"нет"},
+        {"rule":"Условия продукта","detail":"","result":"выполнены"},
+        {
+          "rule": "Лимит",
+          "detail": "Текущие платежи по кредитам и прибыль ограничивают сумму",
+          "result": "5 650 000 ₽"
+        },
+        {"rule":"Флаги ручного рассмотрения","detail":"F01, F02","result":"есть"}
+      ],
+      "comment": null,
+      "decided_by": null,
+      "created_at": "2026-10-24T23:08:01.435898Z"
+    },
+    "limit": {
+      "limit": 5650000,
+      "binding": "DSCR",
+      "phrase": "Текущие платежи по кредитам и прибыль ограничивают сумму",
+      "constraints": [
+        {"code":"PRODUCT_MAX","amount":30000000},
+        {"code":"REVENUE","amount":18000000},
+        {"code":"DSCR","amount":5653261.34,"max_payment":211538.46}
+      ],
+      "rate": 20.5
+    },
+    "assignee": "Иванова Ольга Дмитриевна",
+    "assignee_is_me": true,
+    "sla_due_at": "2026-10-25T23:08:01.452975Z",
+    "priority": "MEDIUM",
+    "priority_reasons": ["Сумма от 10 млн ₽","Флаги F01, F02 требуют проверки"],
+    "audit": [
+      {
+        "action": "STATUS_CHANGED",
+        "actor": "SYSTEM",
+        "user": null,
+        "details": {
+          "to": "MANUAL_REVIEW",
+          "from": "IN_PROCESSING",
+          "reason": "F01 Адрес массовой регистрации, F02 Есть налоговая задолженность"
+        },
+        "created_at": "2026-10-24T23:08:01.435898Z"
+      },
+      {
+        "action": "STATUS_CHANGED",
+        "actor": "SYSTEM",
+        "user": null,
+        "details": {"to":"IN_PROCESSING","from":"SUBMITTED","reason":null},
+        "created_at": "2026-10-24T23:07:59.416621Z"
+      },
+      {
+        "action": "ASSIGNED",
+        "actor": "SYSTEM",
+        "user": null,
+        "details": {"to":"analyst","auto":true},
+        "created_at": "2026-10-24T23:07:59.032505Z"
+      },
+      {
+        "action": "STATUS_CHANGED",
+        "actor": "CLIENT",
+        "user": "Лебедева Марина Олеговна",
+        "details": {"to":"SUBMITTED","from":"DRAFT","reason":null},
+        "created_at": "2026-10-24T23:07:59.032505Z"
+      }
+    ],
+    "info_item_presets": [
+      {
+        "code": "BANK_STATEMENT",
+        "title": "Выписка по расчётному счёту за последние 12 месяцев",
+        "hint": "Файл выгрузки из банка в формате 1С (.txt) или таблица CSV."
+      },
+      {"code":"FIN_STATEMENT","title":"Бухгалтерская отчётность за последний год","hint":"PDF или скан."},
+      {
+        "code": "TAX_EXPLANATION",
+        "title": "Пояснение по налоговой задолженности",
+        "hint": "Когда и как планируете погасить. Можно приложить платёжное поручение."
+      },
+      {
+        "code": "ADDRESS_CONFIRMATION",
+        "title": "Документ о праве пользования офисом",
+        "hint": "Договор аренды или свидетельство о собственности."
+      },
+      {
+        "code": "COLLATERAL_DOCS",
+        "title": "Документы по залогу",
+        "hint": "Документы о праве собственности, оценка."
+      },
+      {
+        "code": "CONTRACTS",
+        "title": "Действующие договоры с покупателями",
+        "hint": "Подтверждают будущую выручку."
+      },
+      {"code":"OTHER","title":"Другое","hint":"Опишите, что нужно, в комментарии."}
+    ]
+  },
+  "messages": [
+    {
+      "id": 5,
+      "author_name": "Соколов Виктор Андреевич",
+      "author_role": "CLIENT",
+      "text": "Когда ждать решения?",
+      "created_at": "2026-10-24T23:08:10.197303Z"
+    },
+    {
+      "id": 6,
+      "author_name": "Иванова Ольга Дмитриевна",
+      "author_role": "UNDERWRITER",
+      "text": "Сегодня, документы в порядке",
+      "created_at": "2026-10-24T23:08:10.213180Z"
+    }
+  ],
+  "draft": {
+    "id": "0cb43929-cdc0-4662-8d12-2fb029a55755",
+    "number": "2026-00003",
+    "status": "DRAFT",
+    "status_label": "Черновик",
+    "next_step": "Заполните и отправьте заявку",
+    "needs_action": true,
+    "can_cancel": false,
+    "product": {
+      "code": "GROWTH",
+      "name": "Кредит на развитие бизнеса",
+      "kind": "LOAN",
+      "description": "Деньги на развитие без залога: закупки, новые точки, оборудование.",
+      "min_amount": "1000000.00",
+      "max_amount": "30000000.00",
+      "min_term": 12,
+      "max_term": 60,
+      "base_rate": "19.00",
+      "collateral_required": false,
+      "min_business_months": 12,
+      "max_business_months": null,
+      "requires_bank_account_months": null,
+      "auto_limit": "10000000.00"
+    },
+    "purpose": "WORKING_CAPITAL",
+    "purpose_label": "Пополнить оборотные средства, закупить товар",
+    "purpose_text": "Закупка товара к сезону",
+    "amount": "3000000.00",
+    "term_months": 24,
+    "declared_revenue": null,
+    "collateral_type": null,
+    "collateral_value": null,
+    "created_at": "2026-10-24T23:08:10.359557Z",
+    "submitted_at": null,
+    "status_changed_at": "2026-10-24T23:08:10.359557Z",
+    "closed_at": null,
+    "sla_due_at": null,
+    "run_no": 0,
+    "company": {
+      "id": "ffe889d3-7d5c-43de-8901-bb737fad3461",
+      "inn": "0010000017",
+      "name": "ООО «Северный ветер»",
+      "legal_form": "OOO",
+      "ogrn": "1007700000010",
+      "registration_date": "2020-08-24",
+      "okved": "46.39",
+      "okved_name": "Торговля оптовая неспециализированная пищевыми продуктами",
+      "address": "г. Москва, Северный проезд, д. 12, офис 4",
+      "status": "ACTIVE",
+      "status_label": "Действующая",
+      "director_name": "Ветров Андрей Сергеевич",
+      "is_bank_client": true,
+      "bank_account_opened_at": "2021-10-24",
+      "business_months": 74,
+      "account_months": 60,
+      "registry_synced_at": "2026-10-24T23:06:55.838637Z"
+    },
+    "steps": [],
+    "offers": [],
+    "info_requests": [],
+    "documents": [],
+    "history": [],
+    "explanation": {
+      "positive": [],
+      "negative": [],
+      "limit_phrase": null,
+      "rejection": [],
+      "advice": [],
+      "next_steps": [],
+      "rate_breakdown": null,
+      "rate_hints": [],
+      "alternatives": []
+    },
+    "loan": null,
+    "ai_parsed": {
+      "text": "Нужно 3 млн на закупку товара к сезону, верну за 2 года",
+      "amount": 3000000,
+      "source": "rules",
+      "purpose": "WORKING_CAPITAL",
+      "summary": null,
+      "term_months": 24
+    }
+  },
+  "submitted": {
+    "id": "0cb43929-cdc0-4662-8d12-2fb029a55755",
+    "number": "2026-00003",
+    "status": "SUBMITTED",
+    "status_label": "Заявка отправлена",
+    "next_step": "Начинаем проверку",
+    "needs_action": false,
+    "can_cancel": true,
+    "product": {
+      "code": "GROWTH",
+      "name": "Кредит на развитие бизнеса",
+      "kind": "LOAN",
+      "description": "Деньги на развитие без залога: закупки, новые точки, оборудование.",
+      "min_amount": "1000000.00",
+      "max_amount": "30000000.00",
+      "min_term": 12,
+      "max_term": 60,
+      "base_rate": "19.00",
+      "collateral_required": false,
+      "min_business_months": 12,
+      "max_business_months": null,
+      "requires_bank_account_months": null,
+      "auto_limit": "10000000.00"
+    },
+    "purpose": "WORKING_CAPITAL",
+    "purpose_label": "Пополнить оборотные средства, закупить товар",
+    "purpose_text": "Закупка товара к сезону",
+    "amount": "3000000.00",
+    "term_months": 24,
+    "declared_revenue": null,
+    "collateral_type": null,
+    "collateral_value": null,
+    "created_at": "2026-10-24T23:08:10.359557Z",
+    "submitted_at": "2026-10-24T23:08:10.423298Z",
+    "status_changed_at": "2026-10-24T23:08:10.423298Z",
+    "closed_at": null,
+    "sla_due_at": null,
+    "run_no": 1,
+    "company": {
+      "id": "ffe889d3-7d5c-43de-8901-bb737fad3461",
+      "inn": "0010000017",
+      "name": "ООО «Северный ветер»",
+      "legal_form": "OOO",
+      "ogrn": "1007700000010",
+      "registration_date": "2020-08-24",
+      "okved": "46.39",
+      "okved_name": "Торговля оптовая неспециализированная пищевыми продуктами",
+      "address": "г. Москва, Северный проезд, д. 12, офис 4",
+      "status": "ACTIVE",
+      "status_label": "Действующая",
+      "director_name": "Ветров Андрей Сергеевич",
+      "is_bank_client": true,
+      "bank_account_opened_at": "2021-10-24",
+      "business_months": 74,
+      "account_months": 60,
+      "registry_synced_at": "2026-10-24T23:06:55.838637Z"
+    },
+    "steps": [
+      {
+        "step": "DATA_CHECK",
+        "title": "Проверка данных заявки",
+        "status": "PENDING",
+        "attempts": 0,
+        "started_at": null,
+        "finished_at": null,
+        "next_retry_at": null,
+        "waiting_text": null,
+        "error": null
+      },
+      {
+        "step": "EGRUL",
+        "title": "Сведения из ЕГРЮЛ / ЕГРИП",
+        "status": "PENDING",
+        "attempts": 0,
+        "started_at": null,
+        "finished_at": null,
+        "next_retry_at": null,
+        "waiting_text": null,
+        "error": null
+      },
+      {
+        "step": "FNS",
+        "title": "Проверка в ФНС",
+        "status": "PENDING",
+        "attempts": 0,
+        "started_at": null,
+        "finished_at": null,
+        "next_retry_at": null,
+        "waiting_text": null,
+        "error": null
+      },
+      {
+        "step": "GIRBO",
+        "title": "Бухгалтерская отчётность",
+        "status": "PENDING",
+        "attempts": 0,
+        "started_at": null,
+        "finished_at": null,
+        "next_retry_at": null,
+        "waiting_text": null,
+        "error": null
+      },
+      {
+        "step": "BKI",
+        "title": "Кредитная история",
+        "status": "PENDING",
+        "attempts": 0,
+        "started_at": null,
+        "finished_at": null,
+        "next_retry_at": null,
+        "waiting_text": null,
+        "error": null
+      },
+      {
+        "step": "BANK",
+        "title": "Обороты по счёту в банке",
+        "status": "PENDING",
+        "attempts": 0,
+        "started_at": null,
+        "finished_at": null,
+        "next_retry_at": null,
+        "waiting_text": null,
+        "error": null
+      },
+      {
+        "step": "SCORING",
+        "title": "Оценка риска",
+        "status": "PENDING",
+        "attempts": 0,
+        "started_at": null,
+        "finished_at": null,
+        "next_retry_at": null,
+        "waiting_text": null,
+        "error": null
+      },
+      {
+        "step": "POLICY",
+        "title": "Кредитное решение",
+        "status": "PENDING",
+        "attempts": 0,
+        "started_at": null,
+        "finished_at": null,
+        "next_retry_at": null,
+        "waiting_text": null,
+        "error": null
+      }
+    ],
+    "offers": [],
+    "info_requests": [],
+    "documents": [],
+    "history": [
+      {
+        "from_status": "DRAFT",
+        "to_status": "SUBMITTED",
+        "to_label": "Заявка отправлена",
+        "actor": "CLIENT",
+        "actor_name": "Ветров Андрей Сергеевич",
+        "reason": null,
+        "created_at": "2026-10-24T23:08:10.415239Z"
+      }
+    ],
+    "explanation": {
+      "positive": [],
+      "negative": [],
+      "limit_phrase": null,
+      "rejection": [],
+      "advice": [],
+      "next_steps": [],
+      "rate_breakdown": null,
+      "rate_hints": [],
+      "alternatives": []
+    },
+    "loan": null,
+    "ai_parsed": {
+      "text": "Нужно 3 млн на закупку товара к сезону, верну за 2 года",
+      "amount": 3000000,
+      "source": "rules",
+      "purpose": "WORKING_CAPITAL",
+      "summary": null,
+      "term_months": 24
+    }
+  },
+  "application_offer": {
+    "id": "0cb43929-cdc0-4662-8d12-2fb029a55755",
+    "number": "2026-00003",
+    "status": "OFFER",
+    "status_label": "Предложение готово",
+    "next_step": "Примите условия или откажитесь",
+    "needs_action": true,
+    "can_cancel": true,
+    "product": {
+      "code": "GROWTH",
+      "name": "Кредит на развитие бизнеса",
+      "kind": "LOAN",
+      "description": "Деньги на развитие без залога: закупки, новые точки, оборудование.",
+      "min_amount": "1000000.00",
+      "max_amount": "30000000.00",
+      "min_term": 12,
+      "max_term": 60,
+      "base_rate": "19.00",
+      "collateral_required": false,
+      "min_business_months": 12,
+      "max_business_months": null,
+      "requires_bank_account_months": null,
+      "auto_limit": "10000000.00"
+    },
+    "purpose": "WORKING_CAPITAL",
+    "purpose_label": "Пополнить оборотные средства, закупить товар",
+    "purpose_text": "Закупка товара к сезону",
+    "amount": "3000000.00",
+    "term_months": 24,
+    "declared_revenue": null,
+    "collateral_type": null,
+    "collateral_value": null,
+    "created_at": "2026-10-24T23:08:10.359557Z",
+    "submitted_at": "2026-10-24T23:08:10.423298Z",
+    "status_changed_at": "2026-10-24T23:08:12.511809Z",
+    "closed_at": null,
+    "sla_due_at": null,
+    "run_no": 1,
+    "company": {
+      "id": "ffe889d3-7d5c-43de-8901-bb737fad3461",
+      "inn": "0010000017",
+      "name": "ООО «Северный ветер»",
+      "legal_form": "OOO",
+      "ogrn": "1007700000010",
+      "registration_date": "2020-08-24",
+      "okved": "46.39",
+      "okved_name": "Торговля оптовая неспециализированная пищевыми продуктами",
+      "address": "г. Москва, Северный проезд, д. 12, офис 4",
+      "status": "ACTIVE",
+      "status_label": "Действующая",
+      "director_name": "Ветров Андрей Сергеевич",
+      "is_bank_client": true,
+      "bank_account_opened_at": "2021-10-24",
+      "business_months": 74,
+      "account_months": 60,
+      "registry_synced_at": "2026-10-24T23:08:10.942482Z"
+    },
+    "steps": [
+      {
+        "step": "DATA_CHECK",
+        "title": "Проверка данных заявки",
+        "status": "DONE",
+        "attempts": 1,
+        "started_at": "2026-10-24T23:08:10.577202Z",
+        "finished_at": "2026-10-24T23:08:10.582082Z",
+        "next_retry_at": null,
+        "waiting_text": null,
+        "error": null
+      },
+      {
+        "step": "EGRUL",
+        "title": "Сведения из ЕГРЮЛ / ЕГРИП",
+        "status": "DONE",
+        "attempts": 1,
+        "started_at": "2026-10-24T23:08:10.595807Z",
+        "finished_at": "2026-10-24T23:08:10.942523Z",
+        "next_retry_at": null,
+        "waiting_text": null,
+        "error": null
+      },
+      {
+        "step": "FNS",
+        "title": "Проверка в ФНС",
+        "status": "DONE",
+        "attempts": 1,
+        "started_at": "2026-10-24T23:08:10.958859Z",
+        "finished_at": "2026-10-24T23:08:11.247297Z",
+        "next_retry_at": null,
+        "waiting_text": null,
+        "error": null
+      },
+      {
+        "step": "GIRBO",
+        "title": "Бухгалтерская отчётность",
+        "status": "DONE",
+        "attempts": 1,
+        "started_at": "2026-10-24T23:08:11.262346Z",
+        "finished_at": "2026-10-24T23:08:11.559759Z",
+        "next_retry_at": null,
+        "waiting_text": null,
+        "error": null
+      },
+      {
+        "step": "BKI",
+        "title": "Кредитная история",
+        "status": "DONE",
+        "attempts": 1,
+        "started_at": "2026-10-24T23:08:11.580197Z",
+        "finished_at": "2026-10-24T23:08:12.280045Z",
+        "next_retry_at": null,
+        "waiting_text": null,
+        "error": null
+      },
+      {
+        "step": "BANK",
+        "title": "Обороты по счёту в банке",
+        "status": "DONE",
+        "attempts": 1,
+        "started_at": "2026-10-24T23:08:12.297004Z",
+        "finished_at": "2026-10-24T23:08:12.464924Z",
+        "next_retry_at": null,
+        "waiting_text": null,
+        "error": null
+      },
+      {
+        "step": "SCORING",
+        "title": "Оценка риска",
+        "status": "DONE",
+        "attempts": 1,
+        "started_at": "2026-10-24T23:08:12.481582Z",
+        "finished_at": "2026-10-24T23:08:12.486923Z",
+        "next_retry_at": null,
+        "waiting_text": null,
+        "error": null
+      },
+      {
+        "step": "POLICY",
+        "title": "Кредитное решение",
+        "status": "DONE",
+        "attempts": 1,
+        "started_at": "2026-10-24T23:08:12.504435Z",
+        "finished_at": "2026-10-24T23:08:12.512141Z",
+        "next_retry_at": null,
+        "waiting_text": null,
+        "error": null
+      }
+    ],
+    "offers": [
+      {
+        "id": "327f568b-9d53-46cf-8008-f8883627a35f",
+        "option_no": 1,
+        "kind": "AS_REQUESTED",
+        "product_code": "GROWTH",
+        "product_name": "Кредит на развитие бизнеса",
+        "product_kind": "LOAN",
+        "amount": "3000000.00",
+        "term_months": 24,
+        "rate": "19.00",
+        "monthly_payment": "151225.85",
+        "overpayment": "629420.40",
+        "payment_label": "Ежемесячный платёж",
+        "valid_until": "2026-10-31T23:08:12.511601Z",
+        "status": "ACTIVE",
+        "note": null
+      }
+    ],
+    "info_requests": [],
+    "documents": [],
+    "history": [
+      {
+        "from_status": "DRAFT",
+        "to_status": "SUBMITTED",
+        "to_label": "Заявка отправлена",
+        "actor": "CLIENT",
+        "actor_name": "Ветров Андрей Сергеевич",
+        "reason": null,
+        "created_at": "2026-10-24T23:08:10.415239Z"
+      },
+      {
+        "from_status": "SUBMITTED",
+        "to_status": "IN_PROCESSING",
+        "to_label": "Проверяем заявку",
+        "actor": "SYSTEM",
+        "actor_name": null,
+        "reason": null,
+        "created_at": "2026-10-24T23:08:10.568149Z"
+      },
+      {
+        "from_status": "IN_PROCESSING",
+        "to_status": "OFFER",
+        "to_label": "Предложение готово",
+        "actor": "SYSTEM",
+        "actor_name": null,
+        "reason": null,
+        "created_at": "2026-10-24T23:08:12.502153Z"
+      }
+    ],
+    "explanation": {
+      "positive": [
+        "Кредиты погашаются без просрочек",
+        "Невысокая текущая долговая нагрузка",
+        "Бизнес работает больше 5 лет"
+      ],
+      "negative": [],
+      "limit_phrase": "Текущие платежи по кредитам и прибыль ограничивают сумму",
+      "rejection": [],
+      "advice": [],
+      "next_steps": [],
+      "rate_breakdown": {"key_rate":"14.0","product_spread":"5.0","risk_margin":"0","adjustment":"0.00","rate":"19.00"},
+      "rate_hints": [
+        {
+          "kind": "product",
+          "text": "Возобновляемая кредитная линия — 18 %: лимит согласовывается один раз, проценты только на использованную часть",
+          "product_code": "CREDIT_LINE",
+          "product_name": "Возобновляемая кредитная линия",
+          "rate": "18.0",
+          "saving": null
+        }
+      ],
+      "alternatives": []
+    },
+    "loan": null,
+    "ai_parsed": {
+      "text": "Нужно 3 млн на закупку товара к сезону, верну за 2 года",
+      "amount": 3000000,
+      "source": "rules",
+      "purpose": "WORKING_CAPITAL",
+      "summary": null,
+      "term_months": 24
+    }
+  },
+  "application_issued": {
+    "id": "0cb43929-cdc0-4662-8d12-2fb029a55755",
+    "number": "2026-00003",
+    "status": "ISSUED",
+    "status_label": "Кредит выдан",
+    "next_step": "Смотрите график платежей",
+    "needs_action": false,
+    "can_cancel": false,
+    "product": {
+      "code": "GROWTH",
+      "name": "Кредит на развитие бизнеса",
+      "kind": "LOAN",
+      "description": "Деньги на развитие без залога: закупки, новые точки, оборудование.",
+      "min_amount": "1000000.00",
+      "max_amount": "30000000.00",
+      "min_term": 12,
+      "max_term": 60,
+      "base_rate": "19.00",
+      "collateral_required": false,
+      "min_business_months": 12,
+      "max_business_months": null,
+      "requires_bank_account_months": null,
+      "auto_limit": "10000000.00"
+    },
+    "purpose": "WORKING_CAPITAL",
+    "purpose_label": "Пополнить оборотные средства, закупить товар",
+    "purpose_text": "Закупка товара к сезону",
+    "amount": "3000000.00",
+    "term_months": 24,
+    "declared_revenue": null,
+    "collateral_type": null,
+    "collateral_value": null,
+    "created_at": "2026-10-24T23:08:10.359557Z",
+    "submitted_at": "2026-10-24T23:08:10.423298Z",
+    "status_changed_at": "2026-10-24T23:08:13.982679Z",
+    "closed_at": "2026-10-24T23:08:13.982679Z",
+    "sla_due_at": null,
+    "run_no": 1,
+    "company": {
+      "id": "ffe889d3-7d5c-43de-8901-bb737fad3461",
+      "inn": "0010000017",
+      "name": "ООО «Северный ветер»",
+      "legal_form": "OOO",
+      "ogrn": "1007700000010",
+      "registration_date": "2020-08-24",
+      "okved": "46.39",
+      "okved_name": "Торговля оптовая неспециализированная пищевыми продуктами",
+      "address": "г. Москва, Северный проезд, д. 12, офис 4",
+      "status": "ACTIVE",
+      "status_label": "Действующая",
+      "director_name": "Ветров Андрей Сергеевич",
+      "is_bank_client": true,
+      "bank_account_opened_at": "2021-10-24",
+      "business_months": 74,
+      "account_months": 60,
+      "registry_synced_at": "2026-10-24T23:08:10.942482Z"
+    },
+    "steps": [
+      {
+        "step": "DATA_CHECK",
+        "title": "Проверка данных заявки",
+        "status": "DONE",
+        "attempts": 1,
+        "started_at": "2026-10-24T23:08:10.577202Z",
+        "finished_at": "2026-10-24T23:08:10.582082Z",
+        "next_retry_at": null,
+        "waiting_text": null,
+        "error": null
+      },
+      {
+        "step": "EGRUL",
+        "title": "Сведения из ЕГРЮЛ / ЕГРИП",
+        "status": "DONE",
+        "attempts": 1,
+        "started_at": "2026-10-24T23:08:10.595807Z",
+        "finished_at": "2026-10-24T23:08:10.942523Z",
+        "next_retry_at": null,
+        "waiting_text": null,
+        "error": null
+      },
+      {
+        "step": "FNS",
+        "title": "Проверка в ФНС",
+        "status": "DONE",
+        "attempts": 1,
+        "started_at": "2026-10-24T23:08:10.958859Z",
+        "finished_at": "2026-10-24T23:08:11.247297Z",
+        "next_retry_at": null,
+        "waiting_text": null,
+        "error": null
+      },
+      {
+        "step": "GIRBO",
+        "title": "Бухгалтерская отчётность",
+        "status": "DONE",
+        "attempts": 1,
+        "started_at": "2026-10-24T23:08:11.262346Z",
+        "finished_at": "2026-10-24T23:08:11.559759Z",
+        "next_retry_at": null,
+        "waiting_text": null,
+        "error": null
+      },
+      {
+        "step": "BKI",
+        "title": "Кредитная история",
+        "status": "DONE",
+        "attempts": 1,
+        "started_at": "2026-10-24T23:08:11.580197Z",
+        "finished_at": "2026-10-24T23:08:12.280045Z",
+        "next_retry_at": null,
+        "waiting_text": null,
+        "error": null
+      },
+      {
+        "step": "BANK",
+        "title": "Обороты по счёту в банке",
+        "status": "DONE",
+        "attempts": 1,
+        "started_at": "2026-10-24T23:08:12.297004Z",
+        "finished_at": "2026-10-24T23:08:12.464924Z",
+        "next_retry_at": null,
+        "waiting_text": null,
+        "error": null
+      },
+      {
+        "step": "SCORING",
+        "title": "Оценка риска",
+        "status": "DONE",
+        "attempts": 1,
+        "started_at": "2026-10-24T23:08:12.481582Z",
+        "finished_at": "2026-10-24T23:08:12.486923Z",
+        "next_retry_at": null,
+        "waiting_text": null,
+        "error": null
+      },
+      {
+        "step": "POLICY",
+        "title": "Кредитное решение",
+        "status": "DONE",
+        "attempts": 1,
+        "started_at": "2026-10-24T23:08:12.504435Z",
+        "finished_at": "2026-10-24T23:08:12.512141Z",
+        "next_retry_at": null,
+        "waiting_text": null,
+        "error": null
+      }
+    ],
+    "offers": [
+      {
+        "id": "327f568b-9d53-46cf-8008-f8883627a35f",
+        "option_no": 1,
+        "kind": "AS_REQUESTED",
+        "product_code": "GROWTH",
+        "product_name": "Кредит на развитие бизнеса",
+        "product_kind": "LOAN",
+        "amount": "3000000.00",
+        "term_months": 24,
+        "rate": "19.00",
+        "monthly_payment": "151225.85",
+        "overpayment": "629420.40",
+        "payment_label": "Ежемесячный платёж",
+        "valid_until": "2026-10-31T23:08:12.511601Z",
+        "status": "ACCEPTED",
+        "note": null
+      }
+    ],
+    "info_requests": [],
+    "documents": [
+      {
+        "id": "2da96ec4-4ad0-455e-b192-546ea2362ce5",
+        "kind": "AGREEMENT",
+        "kind_label": "Кредитный договор",
+        "source": "GENERATED",
+        "file_name": "Кредитный договор 2026-00003.pdf",
+        "content_type": "application/pdf",
+        "size": 53467,
+        "sha256": "1a47fce5177f82382035f40912a4b77c245a83116f68f78cc6c52a76e30492af",
+        "created_at": "2026-10-24T23:08:13.034790Z",
+        "info_request_id": null,
+        "parsed": null,
+        "signed_by_client": true,
+        "signed_by_bank": true
+      }
+    ],
+    "history": [
+      {
+        "from_status": "DRAFT",
+        "to_status": "SUBMITTED",
+        "to_label": "Заявка отправлена",
+        "actor": "CLIENT",
+        "actor_name": "Ветров Андрей Сергеевич",
+        "reason": null,
+        "created_at": "2026-10-24T23:08:10.415239Z"
+      },
+      {
+        "from_status": "SUBMITTED",
+        "to_status": "IN_PROCESSING",
+        "to_label": "Проверяем заявку",
+        "actor": "SYSTEM",
+        "actor_name": null,
+        "reason": null,
+        "created_at": "2026-10-24T23:08:10.568149Z"
+      },
+      {
+        "from_status": "IN_PROCESSING",
+        "to_status": "OFFER",
+        "to_label": "Предложение готово",
+        "actor": "SYSTEM",
+        "actor_name": null,
+        "reason": null,
+        "created_at": "2026-10-24T23:08:12.502153Z"
+      },
+      {
+        "from_status": "OFFER",
+        "to_status": "ACCEPTED",
+        "to_label": "Готовим документы",
+        "actor": "CLIENT",
+        "actor_name": "Ветров Андрей Сергеевич",
+        "reason": null,
+        "created_at": "2026-10-24T23:08:12.724380Z"
+      },
+      {
+        "from_status": "ACCEPTED",
+        "to_status": "SIGNING",
+        "to_label": "Подпишите документы",
+        "actor": "SYSTEM",
+        "actor_name": null,
+        "reason": null,
+        "created_at": "2026-10-24T23:08:13.034790Z"
+      },
+      {
+        "from_status": "SIGNING",
+        "to_status": "SIGNED",
+        "to_label": "Документы подписаны",
+        "actor": "CLIENT",
+        "actor_name": "Ветров Андрей Сергеевич",
+        "reason": null,
+        "created_at": "2026-10-24T23:08:13.464815Z"
+      },
+      {
+        "from_status": "SIGNED",
+        "to_status": "ISSUED",
+        "to_label": "Кредит выдан",
+        "actor": "SYSTEM",
+        "actor_name": null,
+        "reason": null,
+        "created_at": "2026-10-24T23:08:13.642988Z"
+      }
+    ],
+    "explanation": {
+      "positive": [
+        "Кредиты погашаются без просрочек",
+        "Невысокая текущая долговая нагрузка",
+        "Бизнес работает больше 5 лет"
+      ],
+      "negative": [],
+      "limit_phrase": "Текущие платежи по кредитам и прибыль ограничивают сумму",
+      "rejection": [],
+      "advice": [],
+      "next_steps": [],
+      "rate_breakdown": {"key_rate":"14.0","product_spread":"5.0","risk_margin":"0","adjustment":"0.00","rate":"19.00"},
+      "rate_hints": [
+        {
+          "kind": "product",
+          "text": "Возобновляемая кредитная линия — 18 %: лимит согласовывается один раз, проценты только на использованную часть",
+          "product_code": "CREDIT_LINE",
+          "product_name": "Возобновляемая кредитная линия",
+          "rate": "18.0",
+          "saving": null
+        }
+      ],
+      "alternatives": []
+    },
+    "loan": {
+      "id": "780c5dac-b679-4932-a14d-b3bf79e8fd31",
+      "product_code": "GROWTH",
+      "account_number": "45207810000202600003",
+      "amount": "3000000.00",
+      "rate": "19.00",
+      "term_months": 24,
+      "monthly_payment": "151225.85",
+      "issued_at": "2026-10-24T23:08:13.976931Z",
+      "schedule": [
+        {
+          "n": 1,
+          "due_date": "2026-11-24",
+          "payment": "151225.85",
+          "principal": "103725.85",
+          "interest": "47500.00",
+          "balance": "2896274.15"
+        },
+        {
+          "n": 2,
+          "due_date": "2026-12-24",
+          "payment": "151225.85",
+          "principal": "105368.18",
+          "interest": "45857.67",
+          "balance": "2790905.97"
+        }
+      ]
+    },
+    "ai_parsed": {
+      "text": "Нужно 3 млн на закупку товара к сезону, верну за 2 года",
+      "amount": 3000000,
+      "source": "rules",
+      "purpose": "WORKING_CAPITAL",
+      "summary": null,
+      "term_months": 24
+    }
+  },
+  "loan": {
+    "id": "780c5dac-b679-4932-a14d-b3bf79e8fd31",
+    "product_code": "GROWTH",
+    "account_number": "45207810000202600003",
+    "amount": "3000000.00",
+    "rate": "19.00",
+    "term_months": 24,
+    "monthly_payment": "151225.85",
+    "issued_at": "2026-10-24T23:08:13.976931Z",
+    "schedule": [
+      {
+        "n": 1,
+        "due_date": "2026-11-24",
+        "payment": "151225.85",
+        "principal": "103725.85",
+        "interest": "47500.00",
+        "balance": "2896274.15"
+      },
+      {
+        "n": 2,
+        "due_date": "2026-12-24",
+        "payment": "151225.85",
+        "principal": "105368.18",
+        "interest": "45857.67",
+        "balance": "2790905.97"
+      }
+    ]
+  },
+  "document": {
+    "id": "a6ad1879-dda3-46f0-93dd-5da5cb0e9c2c",
+    "kind": "BANK_STATEMENT",
+    "kind_label": "Выписка по расчётному счёту",
+    "source": "CLIENT",
+    "file_name": "vypiska_orlov_1c.txt",
+    "content_type": "text/plain",
+    "size": 22459,
+    "sha256": "eeda7e2f5c6ea328bea86f01ea77b8fef22f87dc7975d2643dbcbef0e70d24fd",
+    "created_at": "2026-10-24T23:08:21.968685Z",
+    "info_request_id": "0e3f06e1-e6cf-4b7d-b948-86f06b5a65ba",
+    "parsed": {
+      "source": "1C",
+      "account": "40802810000000001006",
+      "period_from": "2025-10-05",
+      "period_to": "2026-09-25",
+      "operations": 60,
+      "months": [
+        {"month":"2025-10","inflow":651000,"outflow":124060},
+        {"month":"2025-11","inflow":735000,"outflow":129100},
+        {"month":"2025-12","inflow":686000,"outflow":126160},
+        {"month":"2026-01","inflow":714000,"outflow":127840},
+        {"month":"2026-02","inflow":679000,"outflow":125740},
+        {"month":"2026-03","inflow":728000,"outflow":128680},
+        {"month":"2026-04","inflow":700000,"outflow":127000},
+        {"month":"2026-05","inflow":672000,"outflow":125320},
+        {"month":"2026-06","inflow":721000,"outflow":128260},
+        {"month":"2026-07","inflow":693000,"outflow":126580},
+        {"month":"2026-08","inflow":707000,"outflow":127420},
+        {"month":"2026-09","inflow":714000,"outflow":127840}
+      ],
+      "total_inflow": 8400000,
+      "avg_monthly_inflow": 700000,
+      "closing_balance": 7026000,
+      "forecast": {
+        "horizon_months": 3,
+        "balance_known": true,
+        "deficit_months": [],
+        "trend_inflow": 1664,
+        "trend_outflow": 100,
+        "months": [
+          {"month":"2026-10","inflow":706331,"outflow":127380,"balance":7604951},
+          {"month":"2026-11","inflow":707995,"outflow":127480,"balance":8185467},
+          {"month":"2026-12","inflow":709660,"outflow":127580,"balance":8767547}
+        ],
+        "min_balance": 7026000,
+        "min_balance_month": null,
+        "gap": 0,
+        "overdraft_cap": 280000,
+        "recommendation": {"product":null,"amount":0,"reason":"NO_GAP"}
+      }
+    },
+    "signed_by_client": false,
+    "signed_by_bank": false
+  },
+  "pipeline_issues": [
+    {
+      "application_id": "7b66fc70-0a88-44eb-ae9a-416a1a456a04",
+      "number": "2026-00013",
+      "company_name": "ООО «Альтаир»",
+      "status": "IN_PROCESSING",
+      "step": "BKI",
+      "step_title": "Кредитная история",
+      "step_status": "WAITING",
+      "attempts": 1,
+      "error": "bki: сервис ответил ошибкой 503",
+      "waiting_since": "2026-10-24T23:08:34.186913Z",
+      "next_retry_at": "2026-10-24T23:08:36.186996Z"
+    }
+  ],
+  "application_waiting": {
+    "id": "7b66fc70-0a88-44eb-ae9a-416a1a456a04",
+    "number": "2026-00013",
+    "status": "IN_PROCESSING",
+    "status_label": "Проверяем заявку",
+    "next_step": "Обычно это занимает несколько минут",
+    "needs_action": false,
+    "can_cancel": true,
+    "product": {
+      "code": "EXPRESS",
+      "name": "Экспресс-кредит без залога",
+      "kind": "LOAN",
+      "description": "Быстрое решение без залога и лишних документов — на текущие нужды бизнеса.",
+      "min_amount": "300000.00",
+      "max_amount": "5000000.00",
+      "min_term": 6,
+      "max_term": 36,
+      "base_rate": "21.00",
+      "collateral_required": false,
+      "min_business_months": 9,
+      "max_business_months": null,
+      "requires_bank_account_months": null,
+      "auto_limit": "5000000.00"
+    },
+    "purpose": "WORKING_CAPITAL",
+    "purpose_label": "Пополнить оборотные средства, закупить товар",
+    "purpose_text": null,
+    "amount": "2000000.00",
+    "term_months": 12,
+    "declared_revenue": null,
+    "collateral_type": null,
+    "collateral_value": null,
+    "created_at": "2026-10-24T23:08:32.977461Z",
+    "submitted_at": "2026-10-24T23:08:33.002710Z",
+    "status_changed_at": "2026-10-24T23:08:33.163943Z",
+    "closed_at": null,
+    "sla_due_at": null,
+    "run_no": 1,
+    "company": {
+      "id": "2a366ac2-1576-41c3-9c89-b4f038478f03",
+      "inn": "0010000088",
+      "name": "ООО «Альтаир»",
+      "legal_form": "OOO",
+      "ogrn": "1007700000087",
+      "registration_date": "2018-08-24",
+      "okved": "62.02",
+      "okved_name": "Деятельность консультативная в области компьютерных технологий",
+      "address": "г. Москва, Звёздный бульвар, д. 19",
+      "status": "ACTIVE",
+      "status_label": "Действующая",
+      "director_name": "Белов Кирилл Андреевич",
+      "is_bank_client": true,
+      "bank_account_opened_at": "2022-10-24",
+      "business_months": 98,
+      "account_months": 48,
+      "registry_synced_at": "2026-10-24T23:08:33.521480Z"
+    },
+    "steps": [
+      {
+        "step": "DATA_CHECK",
+        "title": "Проверка данных заявки",
+        "status": "DONE",
+        "attempts": 1,
+        "started_at": "2026-10-24T23:08:33.168936Z",
+        "finished_at": "2026-10-24T23:08:33.172282Z",
+        "next_retry_at": null,
+        "waiting_text": null,
+        "error": null
+      },
+      {
+        "step": "EGRUL",
+        "title": "Сведения из ЕГРЮЛ / ЕГРИП",
+        "status": "DONE",
+        "attempts": 1,
+        "started_at": "2026-10-24T23:08:33.185538Z",
+        "finished_at": "2026-10-24T23:08:33.521526Z",
+        "next_retry_at": null,
+        "waiting_text": null,
+        "error": null
+      },
+      {
+        "step": "FNS",
+        "title": "Проверка в ФНС",
+        "status": "DONE",
+        "attempts": 1,
+        "started_at": "2026-10-24T23:08:33.534868Z",
+        "finished_at": "2026-10-24T23:08:33.766921Z",
+        "next_retry_at": null,
+        "waiting_text": null,
+        "error": null
+      },
+      {
+        "step": "GIRBO",
+        "title": "Бухгалтерская отчётность",
+        "status": "DONE",
+        "attempts": 1,
+        "started_at": "2026-10-24T23:08:33.779778Z",
+        "finished_at": "2026-10-24T23:08:34.166135Z",
+        "next_retry_at": null,
+        "waiting_text": null,
+        "error": null
+      },
+      {
+        "step": "BKI",
+        "title": "Кредитная история",
+        "status": "WAITING",
+        "attempts": 1,
+        "started_at": "2026-10-24T23:08:34.181314Z",
+        "finished_at": null,
+        "next_retry_at": "2026-10-24T23:08:36.186996Z",
+        "waiting_text": "Ждём ответа бюро кредитных историй",
+        "error": null
+      },
+      {
+        "step": "BANK",
+        "title": "Обороты по счёту в банке",
+        "status": "PENDING",
+        "attempts": 0,
+        "started_at": null,
+        "finished_at": null,
+        "next_retry_at": null,
+        "waiting_text": null,
+        "error": null
+      },
+      {
+        "step": "SCORING",
+        "title": "Оценка риска",
+        "status": "PENDING",
+        "attempts": 0,
+        "started_at": null,
+        "finished_at": null,
+        "next_retry_at": null,
+        "waiting_text": null,
+        "error": null
+      },
+      {
+        "step": "POLICY",
+        "title": "Кредитное решение",
+        "status": "PENDING",
+        "attempts": 0,
+        "started_at": null,
+        "finished_at": null,
+        "next_retry_at": null,
+        "waiting_text": null,
+        "error": null
+      }
+    ],
+    "offers": [],
+    "info_requests": [],
+    "documents": [],
+    "history": [
+      {
+        "from_status": "DRAFT",
+        "to_status": "SUBMITTED",
+        "to_label": "Заявка отправлена",
+        "actor": "CLIENT",
+        "actor_name": "Белов Кирилл Андреевич",
+        "reason": null,
+        "created_at": "2026-10-24T23:08:32.998190Z"
+      },
+      {
+        "from_status": "SUBMITTED",
+        "to_status": "IN_PROCESSING",
+        "to_label": "Проверяем заявку",
+        "actor": "SYSTEM",
+        "actor_name": null,
+        "reason": null,
+        "created_at": "2026-10-24T23:08:33.163038Z"
+      }
+    ],
+    "explanation": {
+      "positive": [],
+      "negative": [],
+      "limit_phrase": null,
+      "rejection": [],
+      "advice": [],
+      "next_steps": [],
+      "rate_breakdown": null,
+      "rate_hints": [],
+      "alternatives": []
+    },
+    "loan": null,
+    "ai_parsed": null
+  },
+  "company_options": {
+    "okved": [
+      {
+        "code": "25.11",
+        "name": "Производство строительных металлических конструкций",
+        "industry_risk": "MEDIUM",
+        "typical_margin": 0.12
+      },
+      {
+        "code": "41.20",
+        "name": "Строительство жилых и нежилых зданий",
+        "industry_risk": "HIGH",
+        "typical_margin": 0.1
+      },
+      {
+        "code": "46.39",
+        "name": "Торговля оптовая неспециализированная пищевыми продуктами",
+        "industry_risk": "MEDIUM",
+        "typical_margin": 0.08
+      },
+      {
+        "code": "47.19",
+        "name": "Торговля розничная прочая в неспециализированных магазинах",
+        "industry_risk": "MEDIUM",
+        "typical_margin": 0.08
+      },
+      {
+        "code": "49.41",
+        "name": "Деятельность автомобильного грузового транспорта",
+        "industry_risk": "MEDIUM",
+        "typical_margin": 0.12
+      },
+      {"code":"56.30","name":"Подача напитков","industry_risk":"HIGH","typical_margin":0.15},
+      {
+        "code": "62.01",
+        "name": "Разработка компьютерного программного обеспечения",
+        "industry_risk": "LOW",
+        "typical_margin": 0.2
+      },
+      {
+        "code": "62.02",
+        "name": "Деятельность консультативная в области компьютерных технологий",
+        "industry_risk": "LOW",
+        "typical_margin": 0.2
+      },
+      {
+        "code": "74.10",
+        "name": "Деятельность специализированная в области дизайна",
+        "industry_risk": "MEDIUM",
+        "typical_margin": 0.2
+      }
+    ]
+  },
+  "company_created": {
+    "login": "belyenochi3",
+    "password": "admin",
+    "company": {
+      "id": "c4a3cbd1-d7a2-4982-bce5-b6730d61cf8b",
+      "inn": "0020000143",
+      "name": "ООО «Белые ночи»",
+      "legal_form": "OOO",
+      "ogrn": "1007720000144",
+      "registration_date": "2020-10-24",
+      "okved": "46.39",
+      "okved_name": "Торговля оптовая неспециализированная пищевыми продуктами",
+      "address": "г. Москва, Кленовый бульвар, д. 36, офис 36",
+      "status": "ACTIVE",
+      "status_label": "Действующая",
+      "director_name": "Волков Дмитрий Олегович",
+      "is_bank_client": true,
+      "bank_account_opened_at": "2023-10-24",
+      "business_months": 72,
+      "account_months": 36,
+      "registry_synced_at": "2026-10-24T23:08:41.004218Z"
+    },
+    "inn": "0020000143"
+  },
+  "notifications": {
+    "unread": 4,
+    "items": [
+      {
+        "id": 7063,
+        "application_id": "0cb43929-cdc0-4662-8d12-2fb029a55755",
+        "kind": "STATUS_ISSUED",
+        "title": "Кредит по заявке № 2026-00003 выдан",
+        "body": "Деньги поступили на счёт. График платежей — в кабинете.",
+        "created_at": "2026-10-24T23:08:13.642988Z",
+        "unread": true
+      },
+      {
+        "id": 7060,
+        "application_id": "0cb43929-cdc0-4662-8d12-2fb029a55755",
+        "kind": "STATUS_SIGNING",
+        "title": "Документы по заявке № 2026-00003 готовы",
+        "body": "Проверьте и подпишите договор в кабинете.",
+        "created_at": "2026-10-24T23:08:13.034790Z",
+        "unread": true
+      }
+    ]
+  },
+  "audit": [
+    {
+      "id": 2949,
+      "action": "DRAFT_DELETED",
+      "actor": "CLIENT",
+      "user": "Соколов Виктор Андреевич",
+      "entity_type": "application",
+      "entity_id": "f5720ec9-c683-4f6f-a35f-234df7f85b52",
+      "details": {},
+      "created_at": "2026-10-24T23:08:43.270077Z"
+    },
+    {
+      "id": 2948,
+      "action": "DRAFT_CREATED",
+      "actor": "CLIENT",
+      "user": "Соколов Виктор Андреевич",
+      "entity_type": "application",
+      "entity_id": "f5720ec9-c683-4f6f-a35f-234df7f85b52",
+      "details": {"amount":10000000,"product":"SECURED"},
+      "created_at": "2026-10-24T23:08:43.231168Z"
+    }
+  ],
+  "audit_actions": [
+    "DRAFT_DELETED",
+    "DRAFT_CREATED",
+    "DRAFT_DELETED",
+    "DRAFT_CREATED",
+    "LOGIN_FAILED",
+    "STATUS_CHANGED",
+    "STATUS_CHANGED",
+    "STATUS_CHANGED",
+    "DRAFT_CREATED",
+    "LOGIN",
+    "COMPANY_CREATED",
+    "STATUS_CHANGED",
+    "PIPELINE_RETRY",
+    "FAULTS_RESET",
+    "FAULT_SET",
+    "STATUS_CHANGED",
+    "STATUS_CHANGED",
+    "DRAFT_CREATED",
+    "FAULT_SET",
+    "STATUS_CHANGED",
+    "STATUS_CHANGED",
+    "STATUS_CHANGED",
+    "DRAFT_CREATED",
+    "STATUS_CHANGED",
+    "STATUS_CHANGED",
+    "STATUS_CHANGED",
+    "DRAFT_CREATED",
+    "STATUS_CHANGED",
+    "STATUS_CHANGED",
+    "STATUS_CHANGED",
+    "DRAFT_CREATED",
+    "STATUS_CHANGED",
+    "ASSIGNED",
+    "STATUS_CHANGED",
+    "STATUS_CHANGED",
+    "STATUS_CHANGED",
+    "DRAFT_CREATED",
+    "DRAFT_DELETED",
+    "DOCUMENT_UPLOADED",
+    "DOCUMENT_UPLOADED"
+  ],
+  "queue_closed": [
+    {
+      "number": "2026-00001",
+      "status": "OFFER",
+      "status_label": "Предложение выдано",
+      "risk_class": "B",
+      "score": 720,
+      "flags": [],
+      "priority": null,
+      "assignee_name": "Иванова Ольга Дмитриевна"
+    },
+    {
+      "number": "2026-00002",
+      "status": "OFFER",
+      "status_label": "Предложение выдано",
+      "risk_class": "A",
+      "score": 830,
+      "flags": [],
+      "priority": null,
+      "assignee_name": "Иванова Ольга Дмитриевна"
+    },
+    {
+      "number": "2026-00003",
+      "status": "ISSUED",
+      "status_label": "Выдан",
+      "risk_class": "A",
+      "score": 870,
+      "flags": [],
+      "priority": null,
+      "assignee_name": null
+    },
+    {
+      "number": "2026-00004",
+      "status": "CANCELLED",
+      "status_label": "Отозвана",
+      "risk_class": "B",
+      "score": 740,
+      "flags": [],
+      "priority": null,
+      "assignee_name": null
+    },
+    {
+      "number": "2026-00005",
+      "status": "DECLINED",
+      "status_label": "Отказ клиента",
+      "risk_class": "A",
+      "score": 790,
+      "flags": [],
+      "priority": null,
+      "assignee_name": null
+    },
+    {
+      "number": "2026-00006",
+      "status": "OFFER",
+      "status_label": "Предложение выдано",
+      "risk_class": "A",
+      "score": 790,
+      "flags": [],
+      "priority": null,
+      "assignee_name": null
+    },
+    {
+      "number": "2026-00007",
+      "status": "OFFER",
+      "status_label": "Предложение выдано",
+      "risk_class": "A",
+      "score": 770,
+      "flags": [],
+      "priority": null,
+      "assignee_name": null
+    },
+    {
+      "number": "2026-00009",
+      "status": "REJECTED",
+      "status_label": "Отказ",
+      "risk_class": "C",
+      "score": 630,
+      "flags": [],
+      "priority": null,
+      "assignee_name": "Иванова Ольга Дмитриевна"
+    },
+    {
+      "number": "2026-00010",
+      "status": "REJECTED",
+      "status_label": "Отказ",
+      "risk_class": "E",
+      "score": 370,
+      "flags": [],
+      "priority": null,
+      "assignee_name": null
+    },
+    {
+      "number": "2026-00011",
+      "status": "REJECTED",
+      "status_label": "Отказ",
+      "risk_class": "E",
+      "score": 500,
+      "flags": [],
+      "priority": null,
+      "assignee_name": null
+    },
+    {
+      "number": "2026-00012",
+      "status": "OFFER",
+      "status_label": "Предложение выдано",
+      "risk_class": "A",
+      "score": 900,
+      "flags": [],
+      "priority": null,
+      "assignee_name": null
+    },
+    {
+      "number": "2026-00013",
+      "status": "OFFER",
+      "status_label": "Предложение выдано",
+      "risk_class": "A",
+      "score": 900,
+      "flags": [],
+      "priority": null,
+      "assignee_name": null
+    },
+    {
+      "number": "2026-00014",
+      "status": "OFFER",
+      "status_label": "Предложение выдано",
+      "risk_class": "A",
+      "score": 810,
+      "flags": [],
+      "priority": null,
+      "assignee_name": null
+    }
+  ],
+  "summary_end": {
+    "manual_review": 0,
+    "mine": 0,
+    "overdue": 0,
+    "need_info": 0,
+    "in_processing": 0,
+    "waiting_sources": 0,
+    "offers": 7,
+    "issued_today": 1
+  },
+  "metrics_end": {
+    "period_days": 30,
+    "since": "2026-09-24T23:08:43.515778Z",
+    "until": "2026-10-24T23:08:43.515778Z",
+    "submitted": 13,
+    "in_progress": 7,
+    "decided": 13,
+    "auto_decided": 10,
+    "manual_decided": 3,
+    "automation_share": 0.769,
+    "manual_review": 3,
+    "need_info": 1,
+    "issued": 1,
+    "issued_amount": "3000000.00",
+    "outcomes": [
+      {"code":"APPROVE","title":"Одобрено как запрошено","count":6},
+      {"code":"COUNTER","title":"Контрпредложение","count":4},
+      {"code":"REJECT","title":"Отказ","count":3}
+    ],
+    "to_decision_median_seconds": 2.078855,
+    "to_decision_p95_seconds": 10.809228,
+    "to_issue_median_hours": 0,
+    "info_response_median_hours": 0,
+    "review_median_hours": 0,
+    "offered": 10,
+    "accepted": 1,
+    "offer_conversion": 0.1,
+    "counter_offered": 4,
+    "counter_accepted": 0,
+    "counter_conversion": 0,
+    "sla_overdue_now": 0,
+    "sla_breached": 0,
+    "rejection_reasons": [
+      {"code":"S05","title":"Класс риска E","count":2},
+      {"code":"S01","title":"Ликвидация, реорганизация или банкротство","count":1},
+      {"code":"S03","title":"Текущая просрочка больше 30 дней","count":1},
+      {"code":"R01","title":"Высокий кредитный риск","count":1}
+    ],
+    "products": [
+      {
+        "code": "GROWTH",
+        "name": "Кредит на развитие бизнеса",
+        "applications": 6,
+        "approved": 4,
+        "issued": 1,
+        "issued_amount": "3000000.00"
+      },
+      {
+        "code": "EXPRESS",
+        "name": "Экспресс-кредит без залога",
+        "applications": 3,
+        "approved": 3,
+        "issued": 0,
+        "issued_amount": "0"
+      },
+      {
+        "code": "SECURED",
+        "name": "Кредит под залог",
+        "applications": 1,
+        "approved": 1,
+        "issued": 0,
+        "issued_amount": "0"
+      },
+      {"code":"OVERDRAFT","name":"Овердрафт","applications":1,"approved":1,"issued":0,"issued_amount":"0"},
+      {
+        "code": "CREDIT_LINE",
+        "name": "Возобновляемая кредитная линия",
+        "applications": 1,
+        "approved": 1,
+        "issued": 0,
+        "issued_amount": "0"
+      },
+      {
+        "code": "STARTUP",
+        "name": "Кредит для начинающего бизнеса",
+        "applications": 1,
+        "approved": 0,
+        "issued": 0,
+        "issued_amount": "0"
+      }
+    ],
+    "analysts": [
+      {"name":"Иванова Ольга Дмитриевна","decided":2,"in_work":0,"overdue":0,"median_review_hours":0},
+      {"name":"Ковалёв Павел Игоревич","decided":1,"in_work":0,"overdue":0,"median_review_hours":0}
+    ],
+    "daily": [
+      {"date":"2026-09-26","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-09-27","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-09-28","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-09-29","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-09-30","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-01","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-02","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-03","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-04","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-05","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-06","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-07","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-08","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-09","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-10","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-11","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-12","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-13","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-14","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-15","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-16","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-17","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-18","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-19","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-20","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-21","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-22","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-23","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-24","submitted":0,"decided":0,"issued":0},
+      {"date":"2026-10-25","submitted":13,"decided":13,"issued":1}
+    ]
+  },
+  "faults": {
+    "initial": [
+      {"source":"egrul","title":"ЕГРЮЛ / ЕГРИП","mode":"ok","latency_ms":0},
+      {"source":"fns","title":"ФНС «Прозрачный бизнес»","mode":"ok","latency_ms":0},
+      {"source":"girbo","title":"ГИР БО (отчётность)","mode":"ok","latency_ms":0},
+      {"source":"bki","title":"Бюро кредитных историй","mode":"ok","latency_ms":0},
+      {"source":"bank","title":"Внутренние данные банка","mode":"ok","latency_ms":0},
+      {"source":"core","title":"Выдача кредита (АБС)","mode":"ok","latency_ms":0}
+    ],
+    "bki_error": [
+      {"source":"egrul","title":"ЕГРЮЛ / ЕГРИП","mode":"ok","latency_ms":0},
+      {"source":"fns","title":"ФНС «Прозрачный бизнес»","mode":"ok","latency_ms":0},
+      {"source":"girbo","title":"ГИР БО (отчётность)","mode":"ok","latency_ms":0},
+      {"source":"bki","title":"Бюро кредитных историй","mode":"error","latency_ms":0},
+      {"source":"bank","title":"Внутренние данные банка","mode":"ok","latency_ms":0},
+      {"source":"core","title":"Выдача кредита (АБС)","mode":"ok","latency_ms":0}
+    ],
+    "reset": [
+      {"source":"egrul","title":"ЕГРЮЛ / ЕГРИП","mode":"ok","latency_ms":0},
+      {"source":"fns","title":"ФНС «Прозрачный бизнес»","mode":"ok","latency_ms":0},
+      {"source":"girbo","title":"ГИР БО (отчётность)","mode":"ok","latency_ms":0},
+      {"source":"bki","title":"Бюро кредитных историй","mode":"ok","latency_ms":0},
+      {"source":"bank","title":"Внутренние данные банка","mode":"ok","latency_ms":0},
+      {"source":"core","title":"Выдача кредита (АБС)","mode":"ok","latency_ms":0}
+    ]
+  }
+}

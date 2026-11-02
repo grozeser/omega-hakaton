@@ -1,0 +1,137 @@
+import { useEffect } from 'react';
+import { Navigate, Outlet, Route, Routes, useLocation } from 'react-router-dom';
+
+import { useLiveUpdates } from './api/hooks';
+import { isBankRole, useAuth } from './auth/AuthContext';
+import { AppFooter } from './components/AppFooter';
+import { AppHeader } from './components/AppHeader';
+import { SupportWidget } from './components/SupportWidget';
+import { Theme } from './components/Theme';
+import { Loader } from './components/ui';
+import { AuditPage } from './pages/bank/AuditPage';
+import { DossierPage } from './pages/bank/DossierPage';
+import { MetricsPage } from './pages/bank/MetricsPage';
+import { PipelinePage } from './pages/bank/PipelinePage';
+import { QueuePage } from './pages/bank/QueuePage';
+import { ApplicationPage } from './pages/client/ApplicationPage';
+import { DashboardPage } from './pages/client/DashboardPage';
+import { NewApplicationPage } from './pages/client/NewApplicationPage';
+import { LoginPage } from './pages/LoginPage';
+
+function ClientLayout() {
+    const { user, loading } = useAuth();
+    useLiveUpdates(user?.role === 'CLIENT');
+    if (loading) return <Loader />;
+    if (!user) return <Navigate to='/login' replace={true} />;
+    if (user.role !== 'CLIENT') return <Navigate to='/bank' replace={true} />;
+    return (
+        <div className='app'>
+            <Theme name='corp' />
+            {/* логотип ведёт на стартовую страницу с баннерами, «Главная» в меню — на главную кабинета */}
+            <AppHeader
+                home='/'
+                nav={[
+                    { to: '/client', label: 'Главная', end: true },
+                    { to: '/products', label: 'Продукты', wideOnly: true },
+                    { to: '/client/new', label: 'Получить кредит', short: 'Заявка' },
+                ]}
+            />
+            <Outlet />
+            <AppFooter />
+            <SupportWidget admin={false} />
+        </div>
+    );
+}
+
+function BankLayout() {
+    const { user, loading } = useAuth();
+    useLiveUpdates(isBankRole(user));
+    if (loading) return <Loader />;
+    if (!user) return <Navigate to='/login' replace={true} />;
+    if (!isBankRole(user)) return <Navigate to='/client' replace={true} />;
+    return (
+        <>
+            <Theme name='intranet' />
+            <AppHeader
+                bank={true}
+                home='/bank'
+                nav={[
+                    { to: '/bank', label: 'Очередь заявок', end: true },
+                    { to: '/bank/metrics', label: 'Показатели' },
+                    { to: '/bank/pipeline', label: 'Конвейер и сбои' },
+                    { to: '/bank/audit', label: 'Журнал действий' },
+                ]}
+            />
+            <Outlet />
+            {/* отвечает на вопросы в поддержку администратор; у аналитика кнопки нет */}
+            {user.role === 'ADMIN' && <SupportWidget admin={true} />}
+        </>
+    );
+}
+
+function Home() {
+    const { user, loading } = useAuth();
+    if (loading) return <Loader />;
+    if (!user) return <Navigate to='/login' replace={true} />;
+    return <Navigate to={user.role === 'CLIENT' ? '/client' : '/bank'} replace={true} />;
+}
+
+/** Новый экран открывается с начала страницы: браузер в одностраничном приложении сам этого не делает. */
+function ScrollToTop() {
+    const { pathname } = useLocation();
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+    return null;
+}
+
+export function App() {
+    return (
+        <>
+            <ScrollToTop />
+            <Routes>
+                {/* Стартовая страница с баннерами открыта всем; /login — она же, но вошедших ведёт в кабинет */}
+                <Route
+                    path='/'
+                    element={
+                        <>
+                            <Theme name='corp' />
+                            <LoginPage />
+                        </>
+                    }
+                />
+                <Route
+                    path='/products'
+                    element={
+                        <>
+                            <Theme name='corp' />
+                            <LoginPage page='products' />
+                        </>
+                    }
+                />
+                <Route
+                    path='/login'
+                    element={
+                        <>
+                            <Theme name='corp' />
+                            <LoginPage guestOnly={true} />
+                        </>
+                    }
+                />
+                <Route path='/client' element={<ClientLayout />}>
+                    <Route index={true} element={<DashboardPage />} />
+                    <Route path='new' element={<NewApplicationPage />} />
+                    <Route path='applications/:id' element={<ApplicationPage />} />
+                </Route>
+                <Route path='/bank' element={<BankLayout />}>
+                    <Route index={true} element={<QueuePage />} />
+                    <Route path='applications/:id' element={<DossierPage />} />
+                    <Route path='metrics' element={<MetricsPage />} />
+                    <Route path='pipeline' element={<PipelinePage />} />
+                    <Route path='audit' element={<AuditPage />} />
+                </Route>
+                <Route path='*' element={<Home />} />
+            </Routes>
+        </>
+    );
+}

@@ -1,0 +1,132 @@
+name: smart-credit
+
+x-backend-env: &backend-env
+  DATABASE_URL: postgresql+psycopg://credit:${POSTGRES_PASSWORD:-credit}@postgres:5432/credit
+  SIMULATOR_URL: http://simulator:8100
+  JWT_SECRET: ${JWT_SECRET:-change-me-in-production}
+  FILES_DIR: /data/files
+  AI_ENABLED: ${AI_ENABLED:-false}
+  LLM_BASE_URL: ${LLM_BASE_URL:-http://host.docker.internal:11434/v1}
+  LLM_API_KEY: ${LLM_API_KEY:-}
+  LLM_MODEL: ${LLM_MODEL:-qwen3:4b}
+  LLM_TIMEOUT_SECONDS: ${LLM_TIMEOUT_SECONDS:-40}
+  WORKER_CONCURRENCY: ${WORKER_CONCURRENCY:-4}
+  AUTO_ASSIGN: ${AUTO_ASSIGN:-true}
+
+services:
+  postgres:
+    image: postgres:16.4-alpine
+    environment:
+      POSTGRES_DB: credit
+      POSTGRES_USER: credit
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-credit}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U credit -d credit"]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+    restart: unless-stopped
+
+  simulator:
+    build: ./simulator
+    environment:
+      # Компании, созданные в конструкторе администратора, переживают перезапуск: файл лежит в домашнем
+      # каталоге пользователя app — единственном каталоге образа, куда этому пользователю можно писать
+      SIMULATOR_CUSTOM_FILE: /home/app/custom_companies.json
+    volumes:
+      - simdata:/home/app
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8100/health')"]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+    restart: unless-stopped
+
+  api:
+    build: ./backend
+    command: ["sh", "-c", "alembic upgrade head && python -m app.seed && uvicorn app.main:app --host 0.0.0.0 --port 8000 --proxy-headers --forwarded-allow-ips='*'"]
+    environment: *backend-env
+    volumes:
+      - files:/data/files
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      simulator:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health')"]
+      interval: 3s
+      timeout: 3s
+      retries: 60
+    restart: unless-stopped
+
+  worker:
+    build: ./backend
+    command: ["python", "-m", "app.pipeline.worker"]
+    environment: *backend-env
+    volumes:
+      - files:/data/files
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "${APP_PORT:-8080}:80"
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # Мониторинг по желанию: docker compose --profile monitoring up -d → http://localhost:9090
+  prometheus:
+    image: prom/prometheus:v3.5.0
+    profiles: [monitoring]
+    command: ["--config.file=/etc/prometheus/prometheus.yml", "--storage.tsdb.retention.time=7d"]
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    ports:
+      # только с этого компьютера: метрики и панель не должны быть видны из сети, если профиль поднят на сервере
+      - "${PROMETHEUS_PORT:-127.0.0.1:9090}:9090"
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # Панель конвейера поверх Prometheus → http://localhost:3000 (просмотр без входа; правки — admin / GRAFANA_PASSWORD)
+  grafana:
+    image: grafana/grafana:12.4.13
+    profiles: [monitoring]
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_PASSWORD:-demo}
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Viewer
+      GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH: /var/lib/grafana/dashboards/pipeline.json
+      # Стенд работает без интернета: обращения к grafana.com выключаем — проверку обновлений,
+      # отправку статистики, предустановку плагинов и загрузку ключей подписи плагинов
+      GF_ANALYTICS_CHECK_FOR_UPDATES: "false"
+      GF_ANALYTICS_REPORTING_ENABLED: "false"
+      GF_PLUGINS_PREINSTALL_DISABLED: "true"
+      GF_PLUGINS_PUBLIC_KEY_RETRIEVAL_DISABLED: "true"
+    volumes:
+      - ./monitoring/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources:ro
+      - ./monitoring/grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards:ro
+      - ./monitoring/grafana/dashboards:/var/lib/grafana/dashboards:ro
+    ports:
+      - "${GRAFANA_PORT:-127.0.0.1:3000}:3000"
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
+volumes:
+  pgdata:
+  files:
+  simdata:

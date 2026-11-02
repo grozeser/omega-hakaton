@@ -1,0 +1,1450 @@
+/*
+ * Каркас страниц. Цвета, отступы и радиусы — токены дизайн-системы core-components (core-components),
+ * сверенные с замерами сайтов крупных банков: чёрная шапка, белый «лист» со скруглением, серые панели #F2F3F5
+ * с белыми карточками внутри, фиолетовый #4C35DE только у главного действия, без теней.
+ */
+:root {
+    --font-family-system: 'Onest', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    /*
+     * Ширина контента — как на сайтах крупных банков: 1140 px по центру на любом мониторе (плюс поля 24 px),
+     * уже — на всю ширину окна. Рабочему месту банка с таблицами нужно больше: от 1440 px до 88% окна,
+     * не шире 2800 px.
+     */
+    --page-max-width: 1188px;
+    --page-wide-max-width: clamp(1440px, 88vw, 2800px);
+    --header-height: 72px;
+    --sheet-radius: 40px;
+    --brand-black: #000;
+}
+
+/* Полосы во всю ширину окна не должны давать горизонтальную прокрутку; clip не ломает position: sticky */
+#root {
+    overflow-x: clip;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Токены цвета текста для контраста по WCAG AA переопределены в components/Theme.tsx — после темы дизайн-системы */
+body {
+    font-family: var(--font-family-system);
+    color: var(--color-light-text-primary);
+    background: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*
+ * В Onest цифры по умолчанию табличные: узкая «1» стоит в ширине остальных цифр, и в «16 000 000» после неё
+ * видна дыра. Пропорциональные цифры убирают её; колонки сумм в таблицах явно оставлены табличными.
+ * Поля ввода свойство не наследуют, поэтому указаны отдельно.
+ */
+body,
+input,
+textarea,
+/* поле ползунка (сумма, срок): дизайн-система задаёт ему табличные цифры явно */
+body [class*='slider-input__input'] input {
+    font-variant-numeric: proportional-nums;
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    color: inherit;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* ---------------------------------------------------------------- шапка */
+
+.header {
+    --color-light-text-primary: #fff;
+    --color-light-text-secondary: rgba(255, 255, 255, 0.64);
+
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--brand-black);
+    color: #fff;
+}
+
+.header__inner {
+    max-width: var(--page-max-width);
+    height: var(--header-height);
+    margin: 0 auto;
+    padding: 0 var(--gap-24);
+    display: flex;
+    align-items: center;
+    gap: var(--gap-32);
+}
+
+.header--bank .header__inner {
+    max-width: var(--page-wide-max-width);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-12);
+    text-decoration: none;
+    color: #fff;
+    white-space: nowrap;
+}
+
+/* знак «А» Омега-Банка из @alfalab/icons-logotype: fill="currentColor", поэтому цвет задаётся через color */
+.logo__mark {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    color: var(--color-light-accent-primary, #4c35de);
+}
+
+.nav {
+    display: flex;
+    gap: var(--gap-4);
+}
+
+.nav__link {
+    padding: 10px var(--gap-16);
+    border-radius: 12px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+}
+
+.nav__link:hover {
+    color: #fff;
+}
+
+.nav__link--active {
+    color: #fff;
+    background: #1d1d1f;
+}
+
+.header__right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: var(--gap-16);
+}
+
+.header__user {
+    text-align: right;
+    line-height: 1.2;
+}
+
+/* «Выйти»: красная открытая дверь прямо на шапке, без плашки; кликабельная область 40×40 */
+.header__exit {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 0;
+    border-radius: 12px;
+    background: transparent;
+    color: var(--color-light-accent-primary, #4c35de);
+    cursor: pointer;
+    transition: color 150ms ease;
+}
+
+.header__exit:hover {
+    color: #ff6a5f;
+}
+
+.header__exit:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+.bell {
+    position: relative;
+}
+
+/* колокольчик дизайн-системы нарисован с наклоном 45°; в шапке — 30° от вертикали низом влево (−15° к рисунку) */
+.bell > button svg {
+    transform: rotate(-15deg);
+}
+
+/* без новых уведомлений — серый, с новыми — красный, с «волнами звона» по бокам и коротким покачиванием */
+.bell > button.cc-icon-button {
+    color: rgba(255, 255, 255, 0.48);
+}
+
+.bell--unread > button.cc-icon-button {
+    color: #4c35de;
+}
+
+.bell--unread > button svg {
+    animation: bell-ring 4s ease-in-out infinite;
+}
+
+.bell--unread::before,
+.bell--unread::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 8px;
+    height: 16px;
+    margin-top: -9px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: bell-waves 4s ease-in-out infinite;
+}
+
+.bell--unread::before {
+    left: 2px;
+    border-left-color: #4c35de;
+}
+
+.bell--unread::after {
+    right: 2px;
+    border-right-color: #4c35de;
+}
+
+@keyframes bell-ring {
+    0%,
+    30%,
+    100% {
+        transform: rotate(-15deg);
+    }
+    5% {
+        transform: rotate(0deg);
+    }
+    10% {
+        transform: rotate(-30deg);
+    }
+    15% {
+        transform: rotate(-4deg);
+    }
+    20% {
+        transform: rotate(-25deg);
+    }
+    25% {
+        transform: rotate(-12deg);
+    }
+}
+
+@keyframes bell-waves {
+    0%,
+    30%,
+    100% {
+        opacity: 0.35;
+    }
+    10%,
+    20% {
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bell--unread > button svg,
+    .bell--unread::before,
+    .bell--unread::after {
+        animation: none;
+    }
+}
+
+/* выпадающий список уведомлений светлый, хотя лежит внутри тёмной шапки */
+.notifications {
+    --color-light-text-primary: rgba(3, 3, 6, 0.88);
+    --color-light-text-secondary: rgba(4, 4, 19, 0.6);
+
+    color: var(--color-light-text-primary);
+}
+
+.bell__count {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    box-shadow: 0 0 0 2px var(--brand-black);
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    border-radius: 9px;
+    background: #4c35de;
+    color: #fff;
+    font-size: 11px;
+    line-height: 18px;
+    font-weight: 700;
+    text-align: center;
+    pointer-events: none;
+}
+
+/* ---------------------------------------------------------------- страница */
+
+/*
+ * Контент лежит на белом «листе» со скруглёнными верхними углами поверх чёрной шапки — как на сайтах крупных банков.
+ * Поверхности тоже как на сайте: белая страница → серые панели → белые карточки в панелях.
+ * Стили карточек описаны парами «основной / второстепенный фон», поэтому внутри контента эти два токена
+ * меняются местами — каждый уровень вложенности остаётся контрастным. Модальные окна и выпадающие
+ * списки рисуются вне .page и остаются белыми.
+ */
+.page {
+    --color-light-base-bg-primary: #f2f3f5;
+    --color-light-base-bg-secondary: #fff;
+
+    position: relative;
+    z-index: 0;
+    /* в колонке .app (подвал внизу) элемент с margin: auto сжимается по содержимому — растягиваем явно */
+    width: 100%;
+    max-width: var(--page-max-width);
+    margin: 0 auto;
+    padding: var(--gap-40) var(--gap-24) var(--gap-64);
+}
+
+.page::before,
+.page::after,
+.page-head::before,
+.page-head::after {
+    content: '';
+    position: absolute;
+    left: calc(50% - 50vw);
+    width: 100vw;
+}
+
+/* чёрная подложка под скруглёнными углами листа */
+.page::before {
+    z-index: -2;
+    top: 0;
+    height: var(--sheet-radius);
+    background: var(--brand-black);
+}
+
+/* верх белого листа */
+.page::after {
+    z-index: -1;
+    top: 0;
+    height: calc(var(--sheet-radius) * 2);
+    background: #fff;
+    border-radius: var(--sheet-radius) var(--sheet-radius) 0 0;
+}
+
+.page--wide {
+    max-width: var(--page-wide-max-width);
+}
+
+/* Если у страницы есть заголовок, он стоит на чёрной полосе, а лист начинается под ним */
+.page:has(> .page-head) {
+    padding-top: 0;
+}
+
+.page:has(> .page-head)::before,
+.page:has(> .page-head)::after {
+    display: none;
+}
+
+.page-head {
+    --color-light-text-primary: #fff;
+    --color-light-text-secondary: rgba(255, 255, 255, 0.64);
+
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--gap-24);
+    margin-bottom: var(--gap-32);
+    padding: var(--gap-32) 0 calc(var(--sheet-radius) + var(--gap-24));
+    color: #fff;
+}
+
+.page-head::before {
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    background: var(--brand-black);
+}
+
+.page-head::after {
+    z-index: -1;
+    bottom: 0;
+    height: var(--sheet-radius);
+    background: #fff;
+    border-radius: var(--sheet-radius) var(--sheet-radius) 0 0;
+}
+
+.card {
+    background: var(--color-light-base-bg-primary);
+    border-radius: 32px;
+    padding: var(--gap-32);
+    min-width: 0;
+}
+
+.card--tight {
+    padding: var(--gap-24);
+    border-radius: 28px;
+}
+
+.card--flat {
+    background: var(--color-light-base-bg-secondary);
+}
+
+.tile {
+    background: var(--color-light-base-bg-secondary);
+    border-radius: 20px;
+    padding: var(--gap-20);
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 384px;
+    gap: var(--gap-24);
+    align-items: start;
+}
+
+.grid-2--bank {
+    grid-template-columns: minmax(0, 1fr) 420px;
+}
+
+.sticky {
+    position: sticky;
+    top: calc(var(--header-height) + var(--gap-24));
+}
+
+.stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-24);
+}
+
+.stack-16 {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-16);
+}
+
+.stack-8 {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-8);
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-12);
+    flex-wrap: wrap;
+}
+
+/* иконка в строке с длинным текстом не сжимается, когда текст переносится */
+.row > svg {
+    flex-shrink: 0;
+}
+
+.row--between {
+    justify-content: space-between;
+}
+
+.kv {
+    margin: 0;
+    display: grid;
+    gap: var(--gap-12);
+}
+
+.kv > div {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--gap-16);
+}
+
+.kv dt {
+    color: var(--color-light-text-secondary);
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.kv dd {
+    margin: 0;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    text-align: right;
+}
+
+.metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--gap-16);
+}
+
+.metric__label {
+    font-size: 13px;
+    line-height: 16px;
+    color: var(--color-light-text-secondary);
+}
+
+.metric__value {
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 700;
+    margin-top: var(--gap-4);
+}
+
+.muted {
+    color: var(--color-light-text-secondary);
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-8);
+}
+
+.chip {
+    border: none;
+    cursor: pointer;
+    height: 40px;
+    padding: 0 var(--gap-16);
+    border-radius: 20px;
+    background: var(--color-light-neutral-translucent-200, #dbdde2);
+    color: var(--color-light-text-primary);
+    font: inherit;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.chip--active {
+    background: #212124;
+    color: #fff;
+}
+
+.purpose-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--gap-12);
+}
+
+.purpose-grid--list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--gap-8);
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.purpose {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-16);
+    padding: var(--gap-16) var(--gap-20);
+    border-radius: 16px;
+    border: 2px solid transparent;
+    background: var(--color-light-base-bg-secondary);
+    cursor: pointer;
+    text-align: left;
+    font: inherit;
+    color: inherit;
+}
+
+.purpose:hover {
+    background: var(--color-light-neutral-translucent-200);
+}
+
+.purpose--active {
+    border-color: #212124;
+    background: var(--color-light-base-bg-primary);
+}
+
+/* фокус с клавиатуры — синим контуром снаружи, чтобы не путать с выбором (тёмная рамка) */
+.purpose:focus-visible {
+    outline: 2px solid var(--color-light-status-info, #2288fa);
+    outline-offset: 2px;
+}
+
+.purpose__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    background: var(--color-light-base-bg-primary);
+    flex: none;
+}
+
+/* «Я понял так»: результат разбора описания — что нашли, по каким словам, «Изменить» */
+.understood {
+    padding: var(--gap-16);
+    border-radius: 16px;
+    background: var(--color-light-base-bg-primary);
+}
+
+.understood__row {
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1fr) auto;
+    align-items: start;
+    gap: var(--gap-12);
+}
+
+.understood__label {
+    padding-top: 2px;
+}
+
+.offer-card {
+    background: var(--color-light-base-bg-secondary);
+    border-radius: 20px;
+    padding: var(--gap-24);
+    border: 2px solid transparent;
+}
+
+.offer-card--selected {
+    border-color: #212124;
+}
+
+.offer-card--disabled {
+    opacity: 0.6;
+}
+
+.timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.timeline__item {
+    position: relative;
+    display: flex;
+    gap: var(--gap-12);
+    padding-bottom: var(--gap-16);
+}
+
+.timeline__item:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 11px;
+    top: 26px;
+    bottom: 2px;
+    width: 2px;
+    background: var(--color-light-neutral-translucent-300, #dbdde2);
+}
+
+.timeline__dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    flex: none;
+    background: var(--color-light-neutral-translucent-200, #e7e8eb);
+    color: #fff;
+}
+
+.timeline__dot--done {
+    background: #0cc44d;
+}
+
+.timeline__dot--active {
+    background: #2a77ef;
+}
+
+.timeline__dot--waiting {
+    background: #f7a600;
+}
+
+.timeline__dot--failed {
+    background: #4c35de;
+}
+
+.timeline__dot--skipped {
+    background: var(--color-light-neutral-translucent-300, #c5c7cc);
+}
+
+.pulse {
+    animation: pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.45;
+    }
+}
+
+.factor-bar {
+    height: 8px;
+    border-radius: 4px;
+}
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-8);
+    max-height: 360px;
+    overflow-y: auto;
+    padding-right: var(--gap-4);
+}
+
+.bubble {
+    max-width: 80%;
+    padding: var(--gap-12) var(--gap-16);
+    border-radius: 16px;
+    background: var(--color-light-base-bg-secondary);
+    font-size: 14px;
+    line-height: 20px;
+    white-space: pre-wrap;
+}
+
+.bubble--mine {
+    align-self: flex-end;
+    background: #212124;
+    color: #fff;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table.simple {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+table.simple th {
+    text-align: left;
+    font-weight: 500;
+    color: var(--color-light-text-secondary);
+    font-size: 13px;
+    padding: var(--gap-8) var(--gap-12);
+    border-bottom: 1px solid var(--color-light-neutral-translucent-300, #dbdde2);
+    white-space: nowrap;
+}
+
+table.simple td {
+    padding: var(--gap-12);
+    border-bottom: 1px solid var(--color-light-neutral-translucent-200, #edeef0);
+    vertical-align: middle;
+}
+
+table.simple tr.clickable {
+    cursor: pointer;
+}
+
+table.simple tr.clickable:hover td {
+    background: var(--color-light-base-bg-secondary);
+}
+
+/* строки-ссылки доступны с клавиатуры: Tab, затем Enter или пробел */
+table.simple tr.clickable:focus-visible {
+    outline: 2px solid var(--color-light-status-info, #2288fa);
+    outline-offset: -2px;
+}
+
+table.simple tr.clickable:focus-visible td {
+    background: var(--color-light-base-bg-secondary);
+}
+
+table.simple td.num,
+table.simple th.num {
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* суммы в столбцах выравниваются по разрядам */
+table.simple td.num {
+    font-variant-numeric: tabular-nums;
+}
+
+/* статус не обрезается: при нехватке места переносится соседний текст */
+table.simple td.col-status {
+    white-space: nowrap;
+}
+
+.back-link {
+    gap: var(--gap-4);
+    margin-bottom: var(--gap-8);
+    text-decoration: none;
+    color: var(--color-light-text-secondary);
+}
+
+.back-link:hover {
+    color: var(--color-light-text-primary);
+}
+
+/*
+ * Стартовая страница: шапка с «Получить кредит» слева и «Войти» справа, чёрная шторка с заголовком, белый лист
+ * с шагами и подвал. Шторка и лист — по ширине шапки, поэтому заголовок начинается на одной линии со знаком банка.
+ */
+
+/* «Получить кредит» — как пункт меню кабинета (.nav__link), но белым: текст без фона, при наведении тускнеет */
+.login__nav-button {
+    border: 0;
+    background: none;
+    color: #fff;
+    font-family: inherit;
+    cursor: pointer;
+    transition: color 150ms ease;
+}
+
+.login__nav-button:hover {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+/* «Регистрация» и «Войти» стоят рядом — ближе, чем значки в шапке кабинета */
+.login .header__right {
+    gap: var(--gap-8);
+}
+
+.login__inner {
+    max-width: var(--page-max-width);
+    margin: 0 auto;
+    padding: 0 var(--gap-24);
+}
+
+.login__brand {
+    padding: var(--gap-48) 0 calc(var(--sheet-radius) + var(--gap-48));
+    background: var(--brand-black);
+    color: #fff;
+}
+
+.login__note {
+    margin-top: var(--gap-24);
+}
+
+.login__sheet {
+    position: relative;
+    margin-top: calc(var(--sheet-radius) * -1);
+    padding: var(--gap-48) 0 var(--gap-64);
+    border-radius: var(--sheet-radius) var(--sheet-radius) 0 0;
+    background: #fff;
+}
+
+.login__steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--gap-16);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.login__step {
+    display: grid;
+    gap: var(--gap-8);
+    padding: var(--gap-24);
+    border-radius: 24px;
+    background: #f2f3f5;
+}
+
+.login__step-number {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    margin-bottom: var(--gap-8);
+    border: 2px solid var(--color-light-accent-primary, #4c35de);
+    border-radius: 50%;
+    color: var(--color-light-accent-primary, #4c35de);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* Окно входа: треть ширины и две трети высоты экрана, содержимое прокручивается внутри */
+.login-modal.login-modal {
+    width: clamp(420px, 33.333vw, 640px);
+    height: max(66.667vh, 480px);
+    max-height: calc(100vh - var(--gap-32));
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 32px;
+}
+
+/*
+ * Вход: окно по высоте содержимого — форма по центру сверху, под ней тестовые учётные записи в три колонки.
+ * Полосы прокрутки нет; если экран совсем низкий, содержимое всё равно прокручивается колёсиком.
+ */
+.login-modal.login-modal--wide {
+    width: min(760px, calc(100vw - var(--gap-32)));
+    height: auto;
+}
+
+.login-modal--wide .login-modal__content {
+    scrollbar-width: none;
+}
+
+.login-modal--wide .login-modal__content::-webkit-scrollbar {
+    display: none;
+}
+
+.login-modal__form {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+}
+
+.login-modal__submit {
+    display: flex;
+    justify-content: center;
+}
+
+/* колонки учётных записей — по ширине окна */
+.login-modal__accounts {
+    container-type: inline-size;
+}
+
+@container (min-width: 600px) {
+    .login-modal__accounts .demo-accounts {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Подтверждение выхода: та же анимация и размытие, но компактное — по размеру содержимого */
+.confirm-modal.confirm-modal {
+    width: min(440px, calc(100vw - var(--gap-32)));
+    border-radius: 32px;
+}
+
+.confirm-modal__actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--gap-12);
+    margin-top: var(--gap-8);
+}
+
+/* отступ окна от краёв экрана меньше стандартного 40 px: на невысоком экране окну нужно место */
+.login-modal__wrapper {
+    --modal-vertical-padding: var(--gap-16);
+}
+
+.login-modal__content {
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+/* колонки тестовых учётных записей — по ширине окна, а не экрана */
+.login-modal__body {
+    container-type: inline-size;
+}
+
+/* «Нет профиля? Создать» / «Уже есть профиль? Войти» — переход между окнами входа и регистрации */
+.login-modal__switch {
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--color-light-text-secondary);
+}
+
+.login-modal__link {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--color-light-text-primary);
+    font: inherit;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+}
+
+.login-modal__link:hover {
+    color: var(--color-light-accent-primary, #4c35de);
+}
+
+@container (max-width: 479px) {
+    .login-modal__body .demo-accounts {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* выезжает снизу с лёгким увеличением, уезжает быстрее */
+.login-modal-appear,
+.login-modal-enter {
+    opacity: 0;
+    transform: translateY(40px) scale(0.97);
+}
+
+.login-modal-appear-active,
+.login-modal-enter-active {
+    opacity: 1;
+    transform: none;
+    transition:
+        opacity 320ms ease-out,
+        transform 320ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.login-modal-exit {
+    opacity: 1;
+    transform: none;
+}
+
+.login-modal-exit-active {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+    transition:
+        opacity 220ms ease-in,
+        transform 220ms ease-in;
+}
+
+/* остальная страница размывается и чуть темнеет, чтобы внимание было на окне */
+.login-backdrop {
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(0);
+    backdrop-filter: blur(0);
+    transition:
+        background-color 320ms ease-out,
+        backdrop-filter 320ms ease-out,
+        -webkit-backdrop-filter 320ms ease-out;
+}
+
+.login-backdrop-appear-active,
+.login-backdrop-appear-done,
+.login-backdrop-enter-active,
+.login-backdrop-enter-done,
+.login-backdrop-exit {
+    background-color: rgba(0, 0, 0, 0.32);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.login-backdrop-exit-active {
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(0);
+    backdrop-filter: blur(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .login-modal-appear-active,
+    .login-modal-enter-active,
+    .login-modal-exit-active,
+    .login-backdrop {
+        transition-duration: 1ms;
+    }
+}
+
+.demo-accounts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--gap-8);
+}
+
+.demo-account {
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    padding: var(--gap-12) var(--gap-16);
+    border-radius: 14px;
+    background: var(--color-light-base-bg-secondary);
+    font: inherit;
+    color: inherit;
+}
+
+.demo-account:hover {
+    background: var(--color-light-neutral-translucent-200);
+}
+
+.empty {
+    text-align: center;
+    padding: var(--gap-48) var(--gap-24);
+}
+
+@media (max-width: 1023px) {
+    .grid-2,
+    .grid-2--bank {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .sticky {
+        position: static;
+    }
+
+    .purpose-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* прогноз денежного потока по выписке */
+.cashflow__table td,
+.cashflow__table th {
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.cashflow__negative {
+    color: var(--color-light-text-negative, #ec2d20);
+    font-weight: 500;
+}
+
+/* предварительные предложения на главной */
+.proactive__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--gap-12);
+}
+
+.proactive__facts {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--color-light-text-secondary);
+}
+
+/* калькулятор: слева параметры фиксированной ширины, справа карточки продуктов */
+.grid-2--calculator {
+    grid-template-columns: minmax(0, 440px) minmax(0, 1fr);
+}
+
+/* шаги мастера: на телефоне вместо горизонтальных шагов — компактный индикатор */
+.steps-card__compact {
+    display: none;
+}
+
+.steps-card__bar {
+    height: 4px;
+    margin-top: var(--gap-8);
+    border-radius: 2px;
+    background: var(--color-light-neutral-translucent-200);
+    overflow: hidden;
+}
+
+.steps-card__bar > span {
+    display: block;
+    height: 100%;
+    border-radius: 2px;
+    background: var(--color-light-accent-primary, #4c35de);
+}
+
+/* строка черновика под шагами: «сохранён» и удаление */
+.steps-card__draft {
+    display: grid;
+    gap: var(--gap-8);
+    margin-top: var(--gap-12);
+    padding-top: var(--gap-12);
+    border-top: 1px solid var(--color-light-neutral-translucent-200, #edeef0);
+}
+
+.steps-card__draft > .row {
+    justify-content: space-between;
+    gap: var(--gap-8) var(--gap-16);
+}
+
+.nav__label--short {
+    display: none;
+}
+
+.mobile-only {
+    display: none !important;
+}
+
+/* документ в списке: иконка, описание и кнопки; на узком экране кнопки уходят на отдельную строку */
+.doc-item {
+    flex-wrap: wrap;
+}
+
+.doc-item__body {
+    flex: 1 1 240px;
+    min-width: 0;
+}
+
+.doc-item__actions {
+    display: flex;
+    gap: var(--gap-4);
+    margin-left: auto;
+}
+
+@media (max-width: 1023px) {
+    .grid-2--calculator {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* ---------------------------------------------------------------- подвал */
+
+/* Подвал прижат к низу окна и на короткой странице */
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Чёрное поле со скруглёнными верхними углами поверх белой страницы — как на сайтах крупных банков */
+.footer {
+    margin-top: auto;
+    border-radius: var(--sheet-radius) var(--sheet-radius) 0 0;
+    background: var(--brand-black);
+    color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.footer__inner {
+    max-width: var(--page-max-width);
+    margin: 0 auto;
+    padding: var(--gap-48) var(--gap-24) var(--gap-40);
+}
+
+.footer__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--gap-40) var(--gap-32);
+    padding-bottom: var(--gap-40);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.footer__title {
+    margin: 0 0 var(--gap-16);
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.48);
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.footer__links {
+    display: grid;
+    gap: var(--gap-8);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer__legal {
+    display: grid;
+    gap: var(--gap-8);
+    padding-top: var(--gap-24);
+    font-size: 12px;
+    line-height: 18px;
+    color: rgba(255, 255, 255, 0.48);
+}
+
+@media (max-width: 1023px) {
+    .footer__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* ---------------------------------------------------------------- телефон: кабинет клиента от 360 px */
+@media (max-width: 767px) {
+    :root {
+        --sheet-radius: 24px;
+        --header-height: 60px;
+    }
+
+    .header__inner {
+        gap: var(--gap-12);
+        padding: 0 var(--gap-16);
+    }
+
+    /* рядом со знаком остаётся только логотип, разделы прокручиваются по горизонтали */
+    .logo > span:last-child {
+        display: none;
+    }
+
+    .nav {
+        flex: 1;
+        min-width: 0;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav__link {
+        padding: 8px var(--gap-12);
+        white-space: nowrap;
+    }
+
+    .nav__label {
+        display: none;
+    }
+
+    .nav__label--short {
+        display: inline;
+    }
+
+    .nav__link--wide {
+        display: none;
+    }
+
+    .steps-card__full {
+        display: none;
+    }
+
+    .steps-card__compact {
+        display: block;
+    }
+
+    /* узкие таблицы: второстепенные колонки графика скрыты, прогноз мельче */
+    .col-detail {
+        display: none;
+    }
+
+    .mobile-only {
+        display: block !important;
+        white-space: normal;
+    }
+
+    .mobile-only.apps__status {
+        display: flex !important;
+        flex-wrap: wrap;
+        gap: var(--gap-4) var(--gap-8);
+        margin-top: var(--gap-8);
+    }
+
+    table.simple {
+        font-size: 13px;
+    }
+
+    table.simple th {
+        padding: 6px;
+    }
+
+    table.simple td {
+        padding: var(--gap-8) 6px;
+    }
+
+    table.simple.cashflow__table {
+        font-size: 13px;
+    }
+
+    table.simple.cashflow__table td,
+    table.simple.cashflow__table th {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
+    .header__right {
+        gap: var(--gap-4);
+    }
+
+    .header__user {
+        display: none;
+    }
+
+    /* на телефоне колокольчик не у края экрана: панель привязана к окну с отступами 16 px, а не к кнопке */
+    .notifications {
+        position: fixed !important;
+        top: 64px !important;
+        left: var(--gap-16) !important;
+        right: var(--gap-16) !important;
+        width: auto !important;
+        max-height: calc(100vh - 96px) !important;
+    }
+
+    .page {
+        padding: var(--gap-24) var(--gap-16) var(--gap-40);
+    }
+
+    .page-head {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--gap-16);
+        margin-bottom: var(--gap-24);
+        padding: var(--gap-24) 0 calc(var(--sheet-radius) + var(--gap-16));
+    }
+
+    .card {
+        padding: var(--gap-20);
+        border-radius: 24px;
+    }
+
+    .card--tight {
+        padding: var(--gap-16);
+        border-radius: 20px;
+    }
+
+    .tile {
+        padding: var(--gap-16);
+    }
+
+    .stack {
+        gap: var(--gap-16);
+    }
+
+    .empty {
+        padding: var(--gap-32) var(--gap-16);
+    }
+
+    .metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footer__inner {
+        padding: var(--gap-32) var(--gap-16) var(--gap-24);
+    }
+
+    .footer__grid {
+        gap: var(--gap-32) var(--gap-16);
+        padding-bottom: var(--gap-32);
+    }
+
+    .login__inner {
+        padding: 0 var(--gap-16);
+    }
+
+    .login__brand {
+        padding: var(--gap-32) 0 calc(var(--sheet-radius) + var(--gap-32));
+    }
+
+    .login__sheet {
+        padding: var(--gap-32) 0 var(--gap-48);
+    }
+
+    .login__steps {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .login__step {
+        padding: var(--gap-20);
+    }
+
+    /* в шапке телефона две кнопки не помещаются рядом с меню — регистрация открывается из окна входа */
+    .login .header__right .login__register {
+        display: none;
+    }
+
+    /* «Получить кредит» на телефоне не помещается в шапку — то же действие есть на баннере под ней */
+    .login .login__nav-button {
+        display: none;
+    }
+
+    /* на телефоне кнопки подтверждения выхода — друг под другом, главная сверху */
+    .confirm-modal__actions {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .confirm-modal__actions > :last-child {
+        order: -1;
+    }
+
+    /* на телефоне окно почти во весь экран: треть ширины здесь слишком узко */
+    .login-modal.login-modal {
+        width: calc(100vw - var(--gap-32));
+        height: calc(100vh - var(--gap-32));
+        border-radius: 24px;
+    }
+
+    .demo-accounts {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}

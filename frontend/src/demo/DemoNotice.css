@@ -1,0 +1,45 @@
+/* Полоса демо-версии: тон чуть светлее чёрной шапки, чтобы читалась отдельно и не спорила с навигацией */
+:root {
+    --demo-notice-height: 36px;
+}
+
+.demo-notice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--gap-4) var(--gap-12);
+    min-height: var(--demo-notice-height);
+    padding: var(--gap-8) var(--gap-24);
+    background: #1d1d1f;
+    text-align: center;
+}
+
+.demo-notice__badge {
+    padding: 2px var(--gap-8);
+    border-radius: 6px;
+    /* темнее фирменного фиолетового: белый текст 11px на #3620b3 — 10:1 (WCAG AA) */
+    background: #3620b3;
+    color: #fff;
+    font-size: 11px;
+    line-height: 16px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+/* кабинет с подвалом занимает всю высоту окна — вместе с полосой не должен давать прокрутку */
+.demo-notice ~ .app {
+    min-height: calc(100vh - var(--demo-notice-height));
+}
+
+/* на телефоне хватает первой фразы */
+@media (max-width: 767px) {
+    .demo-notice {
+        padding: var(--gap-8) var(--gap-16);
+    }
+
+    .demo-notice__hint {
+        display: none;
+    }
+}
